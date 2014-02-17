@@ -1,0 +1,10 @@
+<h1><%= @user.username%>'s Blog </h1>
+
+<ul>
+  <% @posts.each do |post|%>
+    <li> <%= link_to post.title, post_url(post) %></li>
+    <%= post.body if post.body %>
+    <%= post.photo_url  if post.photo_url %>
+    <%= post.link_url if post.link_url %>
+  <% end %>
+</ul>

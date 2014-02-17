@@ -18,11 +18,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params.include?(:id)
-      @user = User.find(params[:id])
-    else
-      redirect_to user_url(current_user)
-    end
+
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    # if params.include?(:id)
+#       @user = User.find(params[:id])
+#     else
+#       redirect_to user_url(current_user)
+#     end
   end
 
   def edit

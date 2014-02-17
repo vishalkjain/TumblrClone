@@ -1,6 +1,6 @@
 Tumblrclone::Application.routes.draw do
 
-  resources :users, :only => [:new, :create, :edit, :update]
+  resources :users, :only => [:new, :create, :edit, :update, :show]
 
   # resources :users do
 #     resources :dashboard, :only => [:show]
