@@ -24,4 +24,17 @@ class UsersController < ApplicationController
       redirect_to user_url(current_user)
     end
   end
+
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to dashboard_url
+    else
+      render :json => @user.errors.full_messages
+    end
+  end
 end

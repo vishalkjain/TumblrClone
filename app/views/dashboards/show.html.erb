@@ -1,6 +1,7 @@
 <h1>Dashboard</h1>
-
-<%= button_to "sign out", session_url, :method=>:delete %>
+<%= current_user.username %>
+<%= link_to "Edit User Info", edit_user_url(current_user.id)%>
+<%= button_to "Sign out", session_url, :method=>:delete %>
 <ul>
   <% @posts.each do |post|%>
     <li> <%= link_to post.title, post_url(post) %></li>

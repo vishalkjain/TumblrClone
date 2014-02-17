@@ -1,0 +1,18 @@
+<h1>Edit you profile </h1>
+
+<form action="<%= user_url(current_user.id) %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+
+  <label>Username
+    <input type="text" name="user[username]"  placeholder="<%= current_user.username %>">
+  </label>
+  <br>
+
+  <label>Avatar
+    <!-- some filepicker stuff -->
+  </label>
+  <input type="submit" value="Save Edits">
+</form>
