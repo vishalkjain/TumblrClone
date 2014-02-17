@@ -1,0 +1,55 @@
+<h1>Create new post </h1>
+
+<h3>Text Post</h3>
+<form action="<%= posts_url %>" method="POST">
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+  <label>Title
+    <input type="text" name="post[title]">
+  </label>
+  <br>
+
+  <label>Body
+  <textarea name="post[body]"></textarea>
+  </label>
+  <br>
+  <input type="submit" value="Create Text Post">
+
+</form>
+
+<h3>Photo Post</h3>
+<form action="<%= posts_url %>" method="POST">
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+  <label>Title
+    <input type="text" name="post[title]">
+  </label>
+  <br>
+
+  <label>Photo URL (need filepicker or something here)
+  <input type="text" name="post[photo_url]">
+  </label>
+  <br>
+  <input type="submit" value="Create Photo Post">
+
+</form>
+
+<h3>Link Post</h3>
+<form action="<%= posts_url %>" method="POST">
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+  <label>Title
+    <input type="text" name="post[title]">
+  </label>
+  <br>
+
+  <label>Link URL
+  <input type="text" name="post[link_url]">
+  </label>
+  <br>
+  <input type="submit" value="Create Link Post">
+
+</form>

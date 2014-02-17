@@ -1,3 +1,12 @@
 <h1>Dashboard</h1>
 
 <%= button_to "sign out", session_url, :method=>:delete %>
+<ul>
+  <% @posts.each do |post|%>
+    <li> <%=post.title %></li>
+    <%=post.body if post.body%>
+    <%=post.photo_url  if post.photo_url%>
+    <%=post.link_url if post.link_url %>
+  <% end %>
+</ul>
+<%= link_to "Create new post", new_post_url %>
