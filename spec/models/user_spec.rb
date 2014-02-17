@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "associations" do
+    it { should have_many(:posts) }
+    it { should have_many(:follows) }
+    it { should have_many(:followers) }
+    it { should have_many(:followed_users) }
+    it { should have_many(:following_users) }
+    it { should have_many(:followed_posts) }
+  end
 end
