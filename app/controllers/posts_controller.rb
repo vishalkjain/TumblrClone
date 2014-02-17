@@ -12,4 +12,13 @@ class PostsController < ApplicationController
       render :json => @user.errors.full_messages
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+    # if @post
+#       redirect_to post_url(@post)
+#     else
+#       render :json => "Post does not exist"
+#     end
+  end
 end
