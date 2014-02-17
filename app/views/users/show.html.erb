@@ -1,8 +1,9 @@
 <h1><%= @user.username%>'s Blog </h1>
-
+<%= link_to "Home", dashboard_url%>
 <ul>
   <% @posts.each do |post|%>
-    <li> <%= link_to post.title, post_url(post) %></li>
+    <li> <%= post.user.username %></li>
+    <%= link_to post.title, post_url(post) %>
     <%= post.body if post.body %>
     <%= post.photo_url  if post.photo_url %>
     <%= post.link_url if post.link_url %>

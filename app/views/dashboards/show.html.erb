@@ -5,7 +5,8 @@
 <%= button_to "Sign out", session_url, :method=>:delete %>
 <ul>
   <% @posts.each do |post|%>
-    <li> <%= link_to post.title, post_url(post) %></li>
+    <li> <%= post.user.username %></li>
+    <%= link_to post.title, post_url(post) %>
     <%= post.body if post.body %>
     <%= post.photo_url  if post.photo_url %>
     <%= post.link_url if post.link_url %>
