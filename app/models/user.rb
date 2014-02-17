@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
   has_many :posts
+  #has_many :comments
+  has_many :follows, class_name: "Follow", foreign_key: :user_id
+  has_many :followers, class_name: "Follow", foreign_key: :follow_id
+
+  has_many :followed_users, through: :follows, source: :followed_user
+
+  has_many :following_users, through: :followers, source: :following_user
+
+  has_many :followed_posts, through: :followed_users, source: :posts
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

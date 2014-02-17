@@ -1,5 +1,6 @@
 <h1>Dashboard</h1>
 <%= current_user.username %>
+<%= link_to "Home", dashboard_url%>
 <%= link_to "Edit User Info", edit_user_url(current_user.id)%>
 <%= button_to "Sign out", session_url, :method=>:delete %>
 <ul>
