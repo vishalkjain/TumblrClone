@@ -1,0 +1,7 @@
+<h1>Followers</h1>
+<%= link_to "Home", dashboard_url%>
+<ul>
+<% @followers.each do |follower| %>
+  <li><%= link_to follower.username, user_url(follower) %> </li>
+<% end %>
+</ul>
