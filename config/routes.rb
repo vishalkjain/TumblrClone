@@ -1,4 +1,12 @@
 Tumblrclone::Application.routes.draw do
+
+  resources :users, :only => [:new, :create, :edit, :update]
+
+  # resources :users do
+#     resources :dashboard, :only => [:show]
+#   end
+  resource :dashboard, :only => [:show]
+  resource :session, :only => [:new, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
