@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :require_correct_user!, :only => [:destroy]
+  before_filter :require_correct_user!, :only => [:edit, :update, :destroy]
   def new
   end
 
@@ -23,11 +23,23 @@ class PostsController < ApplicationController
 #     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to dashboard_url
+    else
+      render :json => @post.errors.full_messages
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to dashboard_url
-
   end
 
   def require_correct_user!
