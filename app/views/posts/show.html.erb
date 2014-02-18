@@ -1,5 +1,9 @@
+<%= @post.user.username %>
 <h1> <%= @post.title %></h1>
 
 <%= @post.body if @post.body %>
 <%= @post.photo_url  if @post.photo_url %>
 <%= @post.link_url if @post.link_url %>
+
+<%= button_to("Delete Post", post_url(@post), method: :delete) if @post.user == current_user%>
+

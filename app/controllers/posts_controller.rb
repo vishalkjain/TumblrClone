@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :require_correct_user!, :only => [:destroy]
   def new
   end
 
@@ -20,5 +21,18 @@ class PostsController < ApplicationController
 #     else
 #       render :json => "Post does not exist"
 #     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to dashboard_url
+
+  end
+
+  def require_correct_user!
+    if current_user != Post.find(params[:id]).user
+      redirect_to dashboard_url
+    end
   end
 end

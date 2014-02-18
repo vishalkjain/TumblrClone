@@ -9,7 +9,7 @@ Tumblrclone::Application.routes.draw do
 #   end
   resource :dashboard, :only => [:show]
   resource :session, :only => [:new, :create, :destroy]
-  resources :posts, :only => [:new, :create, :show]
+  resources :posts, :only => [:new, :create, :show, :destroy]
   #resources :users do
 
   #not working right now
