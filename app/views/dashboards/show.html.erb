@@ -4,7 +4,7 @@
 <%= link_to "Edit User Info", edit_user_url(current_user.id)%>
 <%= button_to "Sign out", session_url, :method=>:delete %>
 
-<ul>
+<ul class="posts">
   <% @posts.each do |post|%>
     <li> <%= post.user.username %></li>
     <%= link_to post.title, post_url(post) %>
