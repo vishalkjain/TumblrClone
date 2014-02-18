@@ -11,9 +11,9 @@ class PostsController < ApplicationController
      params[:tag][:tag_name].split(" ").each do |tagname|
        tag = Tag.find_by_tag_name(tagname)
        if tag
-         @post.taggings.new({tag_id: tag.id})
+         @post.taggings.new({ tag_id: tag.id })
        else
-         @post.tags.new({tag_name: tagname})
+         @post.tags.new({ tag_name: tagname })
        end
      end
     end
