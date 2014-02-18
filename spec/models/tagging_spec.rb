@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Tagging do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "associations" do
+    it { should belong_to(:tag) }
+    it { should belong_to(:post) }
+  end
 end
