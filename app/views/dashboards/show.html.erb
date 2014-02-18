@@ -10,11 +10,12 @@
     <%= post.body if post.body %>
     <%= post.photo_url  if post.photo_url %>
     <%= post.link_url if post.link_url %>
-    <h5> Tags: </h5> <% post.tags. each do |tag|%>
-    <h5><%= link_to "#"+tag.tag_name, tag_url(tag) %></h5>
+    <h5> Tags: </h5> <% post.tags.each do |tag|%>
+    <h5><%= link_to "#" + tag.tag_name, tag_url(tag) %></h5>
     <% end %>
     <%= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
   <% end %>
+
 </ul>
 <%= link_to "Create new post", new_post_url %>
 <br>

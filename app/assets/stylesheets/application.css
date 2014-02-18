@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.edit-tag:hover{
+  text-decoration:line-through;
+}

@@ -16,6 +16,15 @@
   <textarea name="post[body]"><%= @post.body %></textarea>
   </label>
   <br>
+
+  <label>Add Tag
+    <input type="text" name="tag[tag_name]" >
+  </label>
+  <br>
+    <% @post.tags.each do |tag|%>
+    <h4 class="edit-tag"><%= link_to "#" + tag.tag_name, tagging_url(tag.taggings), method: :delete %></h4>
+    <% end %>
+    <br>
   <input type="submit" value="Edit Text Post">
 
 </form>

@@ -12,6 +12,8 @@ Tumblrclone::Application.routes.draw do
   resources :posts, :only => [:new, :create, :show, :edit, :update, :destroy]
   #resources :users do
   resources :tags, :only => [:new, :create, :show]
+  resources :taggings, :only => [:destroy]
+
   #not working right now
   root :to => "users#new"
   # The priority is based upon order of creation:

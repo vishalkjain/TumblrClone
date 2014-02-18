@@ -8,10 +8,16 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if(params[:tag][:tag_name] != "")
-      params[:tag][:tag_name].split(" ").each do |tag|
-        @post.tags.new({"tag_name" => tag })
-      end
+     params[:tag][:tag_name].split(" ").each do |tagname|
+       tag = Tag.find_by_tag_name(tagname)
+       if tag
+         @post.taggings.new({tag_id: tag.id})
+       else
+         @post.tags.new({tag_name: tagname})
+       end
+     end
     end
+    #@post.tags.new(params[:tag])
     if @post.save
       redirect_to dashboard_url
     else
@@ -34,6 +40,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    if(params[:tag][:tag_name] != "")
+      params[:tag][:tag_name].split(" ").each do |tagname|
+        tag = Tag.find_by_tag_name(tagname)
+        if tag
+          @post.taggings.new({tag_id: tag.id})
+        else
+          @post.tags.new({tag_name: tagname})
+        end
+      end
+    end
     if @post.update_attributes(params[:post])
       redirect_to dashboard_url
     else
