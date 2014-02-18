@@ -1,70 +1,74 @@
 <h1>Edit post </h1>
+<%= link_to "Home", dashboard_url%>
 
 <% if @post.body %>
-<h3>Text Post</h3>
-<form action="<%= post_url(@post) %>" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <input type="hidden"
-           name="authenticity_token"
-           value="<%= form_authenticity_token %>">
-  <label>Title
-    <input type="text" name="post[title]" value="<%= @post.title %>">
-  </label>
-  <br>
-
-  <label>Body
-  <textarea name="post[body]"><%= @post.body %></textarea>
-  </label>
-  <br>
-
-  <label>Add Tag
-    <input type="text" name="tag[tag_name]" >
-  </label>
-  <br>
-    <% @post.tags.each do |tag|%>
-    <h4 class="edit-tag"><%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(@post.id)), method: :delete %></h4>
-    <% end %>
+  <h3>Text Post</h3>
+  <form action="<%= post_url(@post) %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+    <label>Title
+      <input type="text" name="post[title]" value="<%= @post.title %>">
+    </label>
     <br>
-  <input type="submit" value="Edit Text Post">
 
-</form>
+    <label>Body
+    <textarea name="post[body]"><%= @post.body %></textarea>
+    </label>
+    <br>
+
+    <label>Add Tag
+      <input type="text" name="tag[tag_name]" >
+    </label>
+    <br>
+      <% @post.tags.each do |tag|%>
+      <h4 class="edit-tag">
+        <%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(@post.id)), method: :delete %>
+      </h4>
+      <% end %>
+      <br>
+    <input type="submit" value="Edit Text Post">
+  </form>
+
 <% elsif @post.photo_url %>
-<h3>Photo Post</h3>
-<form action="<%= post_url(@post) %>" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <input type="hidden"
-           name="authenticity_token"
-           value="<%= form_authenticity_token %>">
-  <label>Title
-    <input type="text" name="post[title]" value="<%= @post.title %>">
-  </label>
-  <br>
 
-  <label>Photo URL (need filepicker or something here)
-  <input type="text" name="post[photo_url]" value="<%= @post.photo_url %>">
-  </label>
-  <br>
-  <input type="submit" value="Edit Photo Post">
+  <h3>Photo Post</h3>
+  <form action="<%= post_url(@post) %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+    <label>Title
+      <input type="text" name="post[title]" value="<%= @post.title %>">
+    </label>
+    <br>
 
-</form>
+    <label>Photo URL (need filepicker or something here)
+    <input type="text" name="post[photo_url]" value="<%= @post.photo_url %>">
+    </label>
+    <br>
+    <input type="submit" value="Edit Photo Post">
+  </form>
+
 <% elsif @post.link_url %>
-<h3>Link Post</h3>
-<form action="<%= post_url(@post) %>" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <input type="hidden"
-           name="authenticity_token"
-           value="<%= form_authenticity_token %>">
-  <label>Title
-    <input type="text" name="post[title]" value="<%= @post.title %>">
-  </label>
-  <br>
 
-  <label>Link URL
-  <input type="text" name="post[link_url]" value="<%= @post.link_url %>">
-  </label>
-  <br>
-  <input type="submit" value="Edit Link Post">
+  <h3>Link Post</h3>
+  <form action="<%= post_url(@post) %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+    <label>Title
+      <input type="text" name="post[title]" value="<%= @post.title %>">
+    </label>
+    <br>
 
-</form>
+    <label>Link URL
+    <input type="text" name="post[link_url]" value="<%= @post.link_url %>">
+    </label>
+    <br>
+    <input type="submit" value="Edit Link Post">
+  </form>
 
 <%end%>

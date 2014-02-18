@@ -24,3 +24,13 @@
 
 <!-- search bar -->
 <!-- <input type="search"-->
+
+<form action="<%= user_follows_url(current_user) %>" method="POST">
+  <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
+  <label>Follow a blog
+  <input type="text" name="follow[follow_name]">
+  </label>
+  <input type="submit" value="Follow">
+</form>
