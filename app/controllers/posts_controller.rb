@@ -7,8 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
 
-    if(params[:tag][:name] != "")
-      @post.tags.new(params[:tag])
+    if(params[:tag][:tag_name] != "")
+      params[:tag][:tag_name].split(" ").each do |tag|
+        @post.tags.new({"tag_name" => tag })
+      end
     end
     if @post.save
       redirect_to dashboard_url

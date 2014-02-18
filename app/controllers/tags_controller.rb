@@ -4,6 +4,7 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(params[:tag])
+    fail
     if @tag.save
     else
       render :json => @tag.errors.full_messages
