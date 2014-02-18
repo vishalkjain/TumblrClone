@@ -3,6 +3,7 @@
 <%= link_to "Home", dashboard_url%>
 <%= link_to "Edit User Info", edit_user_url(current_user.id)%>
 <%= button_to "Sign out", session_url, :method=>:delete %>
+
 <ul>
   <% @posts.each do |post|%>
     <li> <%= post.user.username %></li>
@@ -17,14 +18,19 @@
   <% end %>
 
 </ul>
+
 <%= link_to "Create new post", new_post_url %>
 <br>
 <%= link_to "Posts", user_url(current_user.id) %>
 <%= link_to "Followers", user_follows_url(current_user.id) %>
 
-<!-- search bar -->
+<%= link_to "Followed Blogs", followings_url %>
+
+<!-- search bar goes here-->
 <!-- <input type="search"-->
 
+
+<!-- Form to follow another blog -->
 <form action="<%= user_follows_url(current_user) %>" method="POST">
   <input type="hidden"
            name="authenticity_token"

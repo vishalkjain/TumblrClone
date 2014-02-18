@@ -1,6 +1,7 @@
 class FollowsController < ApplicationController
   def index
     @followers = current_user.following_users
+    #@followed_users = current_user.followed_users
   end
 
   def create
@@ -12,5 +13,11 @@ class FollowsController < ApplicationController
     else
       render :json => "Username doesn't exist"
     end
+  end
+
+  def destroy
+    @follow = Follow.find_by_user_id_and_follow_id(params[:user_id], params[:id])
+    @follow.destroy
+    redirect_to :back
   end
 end

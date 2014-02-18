@@ -17,6 +17,7 @@ class PostsController < ApplicationController
        end
      end
     end
+
     #@post.tags.new(params[:tag])
     if @post.save
       redirect_to dashboard_url
