@@ -7,10 +7,13 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
 
+    if(params[:tag][:name] != "")
+      @post.tags.new(params[:tag])
+    end
     if @post.save
       redirect_to dashboard_url
     else
-      render :json => @user.errors.full_messages
+      render :json => @post.errors.full_messages
     end
   end
 
