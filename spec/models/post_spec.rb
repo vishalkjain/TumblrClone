@@ -3,6 +3,8 @@ require 'spec_helper'
 describe Post do
   describe "associations" do
     it { should belong_to(:user) }
+    it { should have_many(:taggings) }
+    it { should have_many(:tags) }
   end
 
   context "without post attributes" do

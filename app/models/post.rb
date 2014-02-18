@@ -5,8 +5,9 @@ class Post < ActiveRecord::Base
    validate :must_have_one_post_type
 
    belongs_to :user
-   # has_many :comments
-   #has_many :tags
+   has_many :taggings, class_name: "Tagging", foreign_key: :post_id
+   has_many :tags, through: :taggings, source: :tag
+
    def must_have_one_post_type
      if body.blank? && photo_url.blank? && link_url.blank?
        errors.add(:body, "cannot be blank")

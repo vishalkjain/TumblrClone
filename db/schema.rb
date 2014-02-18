@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140217215354) do
+ActiveRecord::Schema.define(:version => 20140218143938) do
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
@@ -35,14 +35,21 @@ ActiveRecord::Schema.define(:version => 20140217215354) do
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
-  create_table "tags", :force => true do |t|
-    t.string   "name"
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
     t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "tags", ["post_id"], :name => "index_tags_on_post_id"
+  add_index "taggings", ["post_id"], :name => "index_taggings_on_post_id"
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username",        :null => false
