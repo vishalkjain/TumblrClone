@@ -20,31 +20,15 @@ html, body, div, ul, li, span, strong{
   list-style: none;
 }
 
-header > h1{
-  float:left;
-}
-
-header > ul {
-  float:right;
-}
-
-header > ul >li {
-  float: left;
-}
-
-header:after {
-  content: "";
-  clear: both;
-  display: block;
+body{
+  background-color: #3E5873;
 }
 
 footer {
   bottom: 100px;
 }
+
 .sign-in-form {
-  /*chess: ruby
-  asteroids: javascript
-  tumblrclone: ruby on rails, javascript, jquery, html, css, maybe backbone.js later*/
   width: 100px;
   height: 100px;
   position: absolute;
@@ -53,7 +37,6 @@ footer {
   left: 0;
   right: 0;
   margin: auto;
-
 }
 
 .sign-input {
@@ -95,37 +78,82 @@ footer {
   text-decoration:line-through;
 }
 
-main {
-  max-width: 850px;
+header > h1{
+  float:left;
+  color: white;
+}
+
+header > ul {
+  float:right;
+}
+
+header > ul >li {
+  float: left;
+}
+
+/*header:after {
+  content: "";
+  clear: both;
+  display: block;
+}*/
+
+.main {
+  background-color: #2c4762;
+  width: 850px;
+/*  max-width: 900px;*/
   margin: auto 0;
+  padding: 10px;
   display: inline-block;
   clear:both;
+  border: 1px solid black;
+  border-radius: 20px;
 }
+.new-post-link {
+  float:left;
+}
+
 .posts {
+  width: 650px;
   float:left;
   display: inline-block;
 }
-.posts:after {
+/*.posts:after {
   content:"";
   clear:both;
   display:block;
-}
+}*/
 .post {
   float:left;
-
   padding: 3px;
-  width: 540px;
+  width: 700;
 }
 
 .avatar {
   float: left;
+  width: 100px;
+  height: 100px;
 }
 
 .post-content {
-border: 2px solid black;
+  border: 2px solid black;
+  width: 500px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .sidebar{
+  display:inline-block;
+}
+
+.sidebar li {
+  padding: 3px;
+  border-bottom: 1px solid black;
+}
+
+.clearfix:after {
+  content:"";
   clear:both;
-  float:right;
+  display:block;
 }

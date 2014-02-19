@@ -1,0 +1,24 @@
+  <ul class="posts clearfix">
+  <% @posts.each do |post|%>
+  <li class="post">
+    <%= image_tag post.user.avatar.url(:small), :class => "avatar" %>
+    <ul class="post-content">
+      <li> <%= link_to post.user.username, user_url(post.user) %></li>
+      <li><%= link_to post.title, post_url(post) %></li>
+      <li><%= post.body if post.body %></li>
+      <%#= post.photo_url  if post.photo_url %>
+      <%#= post.link_url if post.link_url %>
+      <li>
+        <ul>
+          <% post.tags.each do |tag|%>
+            <%= link_to "#" + tag.tag_name, tag_url(tag) %>
+          <% end %>
+        </ul>
+      </li>
+      <li><%= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
+      </li>
+    </ul>
+  </li>
+  <% end %>
+
+</ul>
