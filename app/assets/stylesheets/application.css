@@ -11,8 +11,121 @@
  *= require_self
  *= require_tree .
  */
+html, body, div, ul, li, span, strong{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+header > h1{
+  float:left;
+}
+
+header > ul {
+  float:right;
+}
+
+header > ul >li {
+  float: left;
+}
+
+header:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+footer {
+  bottom: 100px;
+}
+.sign-in-form {
+  /*chess: ruby
+  asteroids: javascript
+  tumblrclone: ruby on rails, javascript, jquery, html, css, maybe backbone.js later*/
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+}
+
+.sign-input {
+  border:solid 1px #BFBDBD;
+  color: black;
+  height: 20px;
+  padding:10px;
+  width: 220px;
+  font-size: 1.1em;
+  border-radius: 3px;
+}
+
+.sign-btn {
+  height: 40px;
+  padding-bottom: 10px;
+  width: 240px;
+  padding: 5px 15px;
+  background: #6CAAD2;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+  color: white;
+}
+
+.other_btn{
+  top: 0px;
+  height: 40px;
+  padding-bottom: 10px;
+  width: 240px;
+  padding: 5px 15px;
+  background: #6CAAD2;
+  border: 0 none;
+  cursor: pointer;
+  border-radius: 3px;
+  color: white;
+}
 
 .edit-tag:hover{
   text-decoration:line-through;
 }
 
+main {
+  max-width: 850px;
+  margin: auto 0;
+  display: inline-block;
+  clear:both;
+}
+.posts {
+  float:left;
+  display: inline-block;
+}
+.posts:after {
+  content:"";
+  clear:both;
+  display:block;
+}
+.post {
+  float:left;
+
+  padding: 3px;
+  width: 540px;
+}
+
+.avatar {
+  float: left;
+}
+
+.post-content {
+border: 2px solid black;
+}
+
+.sidebar{
+  clear:both;
+  float:right;
+}

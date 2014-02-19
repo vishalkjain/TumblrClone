@@ -1,13 +1,15 @@
-<h1>tumblr</h1>
 
-<form action="<%= session_url %>" method="POST">
-  <input class="sign-input" type="text" name="user[email]" placeholder="Email">
-  <br>
-  <input class="sign-input" type="password" name="user[password]" placeholder="Password">
-  <br>
-  <input class="sign-btn" type="submit" value="Sign In">
+<div class="sign-in-form">
+  <h1>tumblr.clone</h1>
+  <form action="<%= session_url %>" method="POST">
+    <input class="sign-input" type="text" name="user[email]" placeholder="Email">
+    <br>
+    <input class="sign-input" type="password" name="user[password]" placeholder="Password">
+    <br>
+    <input class="sign-btn" type="submit" value="Sign In">
 
-</form>
-
-
-<%= link_to "Sign Up", new_user_url %>
+  </form>
+</div>
+<footer>
+  <%= link_to "Sign Up", new_user_url, class: "other_btn" %>
+</footer>

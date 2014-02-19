@@ -25,6 +25,19 @@ class PostsController < ApplicationController
     else
       render :json => @post.errors.full_messages
     end
+    # github: gameboyvj
+#     site to see my repositories is just: https://github.com/gameboyvj?tab=repositories
+#     best projects are Chess, Asteroids because they are complete with graphics
+#     most of the other projects were practice backend work
+#     my final project right now is a Tumblr clone
+#     replicates the ability to CRUD (stands for create, read, update and delete)
+#     I CRUD posts, followers and tags
+#     posts = ability to make new blog post
+#     followers = ability for blog to follow and be followed
+#     tags = tag a post to organize topics (can click on tag to see all other posts in world that have same tag)
+#
+#     if u wanna try out asteroids, go to asteroids repo, click "download zip" on right bar, extract zip, and double click on index.html
+#       it should open in browser, use arrow keys to move and spacebar to shoot
   end
 
   def show
