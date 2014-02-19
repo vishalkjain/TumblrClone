@@ -7,14 +7,15 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
 
-    if(params[:tag][:tag_name] != "")
+    if params[:tag][:tag_name].length > 0
      params[:tag][:tag_name].split(" ").each do |tagname|
-       tag = Tag.find_by_tag_name(tagname)
-       if tag
-         @post.taggings.new({ tag_id: tag.id })
-       else
-         @post.tags.new({ tag_name: tagname })
-       end
+       @post.tags << Tag.find_or_create_by_tag_name(tagname)
+       # tag = Tag.find_by_tag_name(tagname)
+#        if tag
+#          @post.taggings.new(tag_id: tag.id)
+#        else
+#          @post.tags.new(tag_name: tagname)
+#        end
      end
     end
 

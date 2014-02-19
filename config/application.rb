@@ -71,5 +71,14 @@ module Tumblrclone
         :controller_specs => true,
         :request_specs => true
     end
+    config.paperclip_defaults = {
+          :storage => :s3,
+          :s3_credentials => {
+            :bucket => ENV["S3_bucket"],
+            :access_key_id => ENV["S3_access_key_id"],
+            :secret_access_key => ENV["S3_secret_access_key"]
+            # :s3_host_name => 's3-us-west-.amazonaws.com' # or whatever your region host name is
+          }
+    }
   end
 end

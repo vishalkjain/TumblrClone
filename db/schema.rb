@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140218161759) do
+ActiveRecord::Schema.define(:version => 20140219144948) do
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
@@ -52,13 +52,16 @@ ActiveRecord::Schema.define(:version => 20140218161759) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",        :null => false
-    t.string   "email",           :null => false
-    t.string   "password_digest", :null => false
-    t.string   "avatar_url"
-    t.string   "session_token",   :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "username",            :null => false
+    t.string   "email",               :null => false
+    t.string   "password_digest",     :null => false
+    t.string   "session_token",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true

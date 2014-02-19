@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :password, :email, :avatar_url
+  attr_accessible :username, :password, :email, :avatar
   attr_reader :password
 
   validates :password_digest, :presence => true
@@ -11,16 +11,16 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
 
   has_many :posts
-  #has_many :comments
   has_many :follows, class_name: "Follow", foreign_key: :user_id
   has_many :followers, class_name: "Follow", foreign_key: :follow_id
-
   has_many :followed_users, through: :follows, source: :followed_user
-
   has_many :following_users, through: :followers, source: :following_user
-
   has_many :followed_posts, through: :followed_users, source: :posts
 
+  has_attached_file :avatar, :styles => {
+          :small => "100x100#"
+        }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

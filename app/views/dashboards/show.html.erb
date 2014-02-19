@@ -3,10 +3,10 @@
 <%= link_to "Home", dashboard_url%>
 <%= link_to "Edit User Info", edit_user_url(current_user.id)%>
 <%= button_to "Sign out", session_url, :method=>:delete %>
-
+<%= image_tag current_user.avatar.url(:small) if current_user.avatar %>
 <ul class="posts">
   <% @posts.each do |post|%>
-    <li> <%= post.user.username %></li>
+    <li> <%= link_to post.user.username, user_url(post.user) %></li>
     <%= link_to post.title, post_url(post) %>
     <%= post.body if post.body %>
     <%= post.photo_url  if post.photo_url %>
