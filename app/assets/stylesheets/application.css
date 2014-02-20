@@ -21,13 +21,18 @@ html, body, div, ul, li, span, strong, header, a{
 
 }
 
+html, body {
+min-height: 100%;
+
+}
 .website{
   background-color: #3E5873;
-  background: -webkit-linear-gradient(#3E5873, #2c4762); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#3E5873, #2c4762); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#3E5873, #2c4762); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#3E5873, #2c4762); /* Standard syntax */
+  background: -webkit-linear-gradient(#3E5873, #2c4762)  no-repeat; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#3E5873, #2c4762) no-repeat; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#3E5873, #2c4762) no-repeat; /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#3E5873, #2c4762) no-repeat; /* Standard syntax */
 }
+
 .sign {
   background-color: #3E5873;
 }
@@ -206,4 +211,14 @@ header > ul > li {
 
 .edit-tag:hover{
   text-decoration:line-through;
+}
+
+.followers {
+  width: 620px;
+  float:left;
+  display: inline-block;
+  padding: 10px 0;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
 }

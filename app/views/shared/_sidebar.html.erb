@@ -1,0 +1,23 @@
+<!-- sidebar -->
+<div class="sidebar">
+  <ul>
+    <li><%= current_user.username %></li>
+
+    <li><%= link_to "Posts", user_url(current_user.id) %> </li>
+    <li><%= link_to "Followers", user_follows_url(current_user.id) %></li>
+
+    <li><%= link_to "Followed Blogs", followings_url %></li>
+    <li>
+      <form action="<%= user_follows_url(current_user) %>" method="POST">
+        <input type="hidden"
+             name="authenticity_token"
+             value="<%= form_authenticity_token %>">
+        <label for="follow">Follow a blog</label>
+        <br>
+          <input type="text" name="follow[follow_name]" id="follow">
+
+        <input type="submit" value="Follow">
+      </form>
+    </li>
+  </ul>
+</div>

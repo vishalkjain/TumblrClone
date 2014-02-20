@@ -1,7 +1,15 @@
-<h1>Followers</h1>
-<%= link_to "Home", dashboard_url%>
-<ul>
-<% @followers.each do |follower| %>
-  <li><%= link_to follower.username, user_url(follower) %> </li>
-<% end %>
+
+<% num_followers = @followers.length %>
+<ul class="followers clearfix">
+  <% if num_followers == 1%>
+    <h1><%= num_followers %> person follows you</h1>
+  <% else %>
+    <h1><%= num_followers %> people follow you</h1>
+  <% end %>
+
+  <% @followers.each do |follower| %>
+    <li><%= image_tag follower.avatar.url(:small), :height => '40', :width => '40', :class => "thumbnail" %>
+      <%= link_to follower.username, user_url(follower) %>
+    </li>
+  <% end %>
 </ul>
