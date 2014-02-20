@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-html, body, div, ul, li, span, strong{
+html, body, div, ul, li, span, strong, header{
   padding: 0;
   margin: 0;
   border: 0;
@@ -78,6 +78,11 @@ footer {
   text-decoration:line-through;
 }
 
+header {
+  width: 850px;
+  margin: 0 auto;
+}
+
 header > h1{
   float:left;
   color: white;
@@ -85,6 +90,7 @@ header > h1{
 
 header > ul {
   float:right;
+  padding-top: 30px;
 }
 
 header > ul >li {
@@ -101,12 +107,13 @@ header > ul >li {
   background-color: #2c4762;
   width: 850px;
 /*  max-width: 900px;*/
-  margin: auto 0;
+  margin: 0 auto;
   padding: 10px;
-  display: inline-block;
-  clear:both;
+  display: block;
+  clear: both;
   border: 1px solid black;
   border-radius: 20px;
+
 }
 .new-post-link {
   float:left;
