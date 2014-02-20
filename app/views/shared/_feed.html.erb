@@ -1,10 +1,44 @@
   <ul class="posts clearfix">
 
   <% if request.fullpath() == "/dashboard"%>
-  <li class="new-post">
+  <li class="post">
     <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
-    <%= link_to "Create new post", new_post_url, :class => "post-content new-post"%>
+
+    <div id="new-post" class="new-post-content-before">
+      <h4>Create new post </h4>
+    </div>
+
+    <div id="slide-down" class="new-post-content-after hidden">
+      <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden">
+        <input type="hidden"
+                 name="authenticity_token"
+                 value="<%= form_authenticity_token %>">
+
+        <label>Title
+          <input type="text" name="post[title]">
+        </label>
+        <br>
+
+        <label>Body
+        <textarea name="post[body]"></textarea>
+        </label>
+        <br>
+
+        <label>Tag
+          <input type="text" name="tag[tag_name]">
+        </label>
+        <br>
+        <input class="post-buttons" type="submit" value="Create Text Post">
+        <button type="button" class="post-buttons">Cancel</button>
+
+      </form>
+    </div>
   </li>
+
+  <%#= link_to "Create new post", new_post_url, :class => "new-post-content "%>
+  <!-- <li id="post-form" class="new-post hidden">
+
+  </li> -->
   <% end %>
 
   <% @posts.each do |post|%>

@@ -145,13 +145,30 @@ header > ul > li {
 
 }
 .new-post{
-  height: 75px;
-
-
+  /*height: 75px;*/
 }
 
 .new-post-link {
   float:left;
+}
+.new-post-content-before{
+  min-height: 40px;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+  background-color:white;
+}
+
+.new-post-content-after {
+  min-height: 75px;
+  height: 200px;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+  float:right;
 }
 
 .posts {
@@ -180,6 +197,7 @@ header > ul > li {
 .post-content {
 /*  border: 2px solid black;*/
   width: 500px;
+  min-height: 75px;
   display: inline-block;
   background-color: white;
   border-radius: 15px;
@@ -221,4 +239,8 @@ header > ul > li {
   background-color: white;
   border-radius: 5px;
   margin: 10px 10px 10px 0;
+}
+
+.hidden {
+  display: none;
 }
