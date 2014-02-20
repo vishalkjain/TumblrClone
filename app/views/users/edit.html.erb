@@ -1,6 +1,7 @@
-<h1>Edit you profile </h1>
 
-<form action="<%= user_url(current_user.id) %>" method="POST" enctype="multipart/form-data">
+
+<form action="<%= user_url(current_user.id) %>" method="POST" enctype="multipart/form-data" class="follow">
+  <h1>Edit you profile </h1>
   <input type="hidden" name="_method" value="PUT">
   <input type="hidden"
            name="authenticity_token"
@@ -11,8 +12,7 @@
   </label>
   <br>
 
-
-    <div class="field">Avatar<input type="file" name="user[avatar]"></div>
+  <div class="field">Avatar<input type="file" name="user[avatar]"></div>
 
   <br>
   <input type="submit" value="Save Edits">

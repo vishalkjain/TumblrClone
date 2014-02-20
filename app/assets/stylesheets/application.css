@@ -213,7 +213,7 @@ header > ul > li {
   text-decoration:line-through;
 }
 
-.followers {
+.follow {
   width: 620px;
   float:left;
   display: inline-block;

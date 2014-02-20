@@ -1,9 +1,11 @@
   <ul class="posts clearfix">
 
-    <li class="new-post">
-      <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
-      <%= link_to "Create new post", new_post_url, :class => "post-content new-post"%>
-    </li>
+  <% if request.fullpath() == "/dashboard"%>
+  <li class="new-post">
+    <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
+    <%= link_to "Create new post", new_post_url, :class => "post-content new-post"%>
+  </li>
+  <% end %>
 
   <% @posts.each do |post|%>
   <li class="post">
