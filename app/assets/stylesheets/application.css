@@ -11,17 +11,22 @@
  *= require_self
  *= require_tree .
  */
-html, body, div, ul, li, span, strong, header{
+html, body, div, ul, li, span, strong, header, a{
   padding: 0;
   margin: 0;
   border: 0;
   font: inherit;
   vertical-align: baseline;
   list-style: none;
+
 }
 
 body{
   background-color: #3E5873;
+  background: -webkit-linear-gradient(#3E5873, #2c4762); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#3E5873, #2c4762); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#3E5873, #2c4762); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#3E5873, #2c4762); /* Standard syntax */
 }
 
 footer {
@@ -86,15 +91,17 @@ header {
 header > h1{
   float:left;
   color: white;
+  font-size: 40px;
 }
 
 header > ul {
   float:right;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
-header > ul >li {
+header > ul > li {
   float: left;
+  padding: 0 15px;
 }
 
 /*header:after {
@@ -111,10 +118,16 @@ header > ul >li {
   padding: 10px;
   display: block;
   clear: both;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   border-radius: 20px;
 
 }
+.new-post{
+  height: 75px;
+
+
+}
+
 .new-post-link {
   float:left;
 }
@@ -142,7 +155,7 @@ header > ul >li {
 }
 
 .post-content {
-  border: 2px solid black;
+/*  border: 2px solid black;*/
   width: 500px;
   display: inline-block;
   background-color: white;
@@ -155,8 +168,15 @@ header > ul >li {
 }
 
 .sidebar li {
-  padding: 3px;
-  border-bottom: 1px solid black;
+  padding: 5px;
+  border-bottom: 1px solid;
+  border-color: #D4D4D4;
+  color: #d4d4d4;
+}
+
+.sidebar a {
+  color: #D4D4D4;
+  text-decoration: none;
 }
 
 .clearfix:after {
