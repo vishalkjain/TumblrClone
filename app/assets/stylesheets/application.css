@@ -249,3 +249,23 @@ header > ul > li {
 .blogname {
   color: white;
 }
+
+.edit-post-content-before{
+  /*min-height: 40px;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+  background-color:white;*/
+}
+
+.edit-post-content-after {
+  min-height: 75px;
+  height: 200px;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+  float:right;
+}

@@ -57,7 +57,43 @@
           <% end %>
         </ul>
       </li>
-      <li><%= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
+      <li>
+        <% if post.user == current_user %>
+        <div id="edit-post" class="edit-post-content-before"><!-- class="edit-post-content-before">-->
+          <h4>Edit post </h4>
+        </div>
+        <%#= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
+        <div class="edit-post-form-container hidden">
+          <form action="<%= post_url(post) %>" method="POST" id="edit-post-form" class="">
+          <input type="hidden" name="_method" value="PUT">
+          <input type="hidden"
+                   name="authenticity_token"
+                   value="<%= form_authenticity_token %>">
+          <label>Title
+            <input type="text" name="post[title]" value="<%= post.title %>">
+          </label>
+          <br>
+
+          <label>Body
+          <textarea name="post[body]"><%= post.body %></textarea>
+          </label>
+          <br>
+
+          <label>Add Tag
+            <input type="text" name="tag[tag_name]" >
+          </label>
+          <br>
+            <% post.tags.each do |tag|%>
+            <h4 class="edit-tag">
+              <%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete %>
+            </h4>
+            <% end %>
+            <br>
+          <input type="submit" class="edit-post-buttons" value="Edit Text Post">
+          <button type="button" class="edit-post-buttons">Cancel</button>
+        </form>
+        </div>
+        <% end %>
       </li>
     </ul>
   </li>

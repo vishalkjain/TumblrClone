@@ -29,4 +29,17 @@ $(document).ready(function(){
     });
   });
 
+  $(".edit-post-content-before").click(function(event){
+    $editdiv= $(event.currentTarget);
+    $editdiv.addClass("hidden");
+    console.log($editdiv.next());
+    $editdiv.next().slideDown(1000, function(){
+    });
+  });
+
+   $(".edit-post-buttons").click(function(event){
+     $(event.currentTarget).parent().slideUp(1000, function(){
+
+     });
+   });
 });
