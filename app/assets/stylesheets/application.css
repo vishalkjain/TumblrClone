@@ -21,19 +21,18 @@ html, body, div, ul, li, span, strong, header, a{
 
 }
 
-body{
+.website{
   background-color: #3E5873;
   background: -webkit-linear-gradient(#3E5873, #2c4762); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#3E5873, #2c4762); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(#3E5873, #2c4762); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#3E5873, #2c4762); /* Standard syntax */
 }
-
-footer {
-  bottom: 100px;
+.sign {
+  background-color: #3E5873;
 }
 
-.sign-in-form {
+/*.sign-in-form {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -42,6 +41,18 @@ footer {
   left: 0;
   right: 0;
   margin: auto;
+}*/
+
+.sign-in-form {
+  margin: 200px auto;
+  background: #fff;
+  width: 260px;
+  background-color: inherit;
+}
+
+.sign-in-form > h1 {
+  color: white;
+
 }
 
 .sign-input {
@@ -56,17 +67,19 @@ footer {
 
 .sign-btn {
   height: 40px;
-  padding-bottom: 10px;
-  width: 240px;
+  width: 242px;
   padding: 5px 15px;
   background: #6CAAD2;
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
   color: white;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 15px;
 }
 
-.other_btn{
+.other-btn{
   top: 0px;
   height: 40px;
   padding-bottom: 10px;
@@ -77,10 +90,14 @@ footer {
   cursor: pointer;
   border-radius: 3px;
   color: white;
+  text-decoration: none;
 }
 
-.edit-tag:hover{
-  text-decoration:line-through;
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+  padding-left: 15px;
 }
 
 header {
@@ -88,7 +105,7 @@ header {
   margin: 0 auto;
 }
 
-header > h1{
+header > h1 {
   float:left;
   color: white;
   font-size: 40px;
@@ -136,6 +153,7 @@ header > ul > li {
   width: 650px;
   float:left;
   display: inline-block;
+  padding-top: 10px;
 }
 /*.posts:after {
   content:"";
@@ -144,7 +162,7 @@ header > ul > li {
 }*/
 .post {
   float:left;
-  padding: 3px;
+  padding: 10px 0;
   width: 700;
 }
 
@@ -165,10 +183,11 @@ header > ul > li {
 
 .sidebar{
   display:inline-block;
+  padding-top: 10px;
 }
 
 .sidebar li {
-  padding: 5px;
+  padding: 10px;
   border-bottom: 1px solid;
   border-color: #D4D4D4;
   color: #d4d4d4;
@@ -183,4 +202,8 @@ header > ul > li {
   content:"";
   clear:both;
   display:block;
+}
+
+.edit-tag:hover{
+  text-decoration:line-through;
 }

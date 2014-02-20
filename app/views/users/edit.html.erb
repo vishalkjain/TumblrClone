@@ -1,5 +1,5 @@
 <h1>Edit you profile </h1>
-<%= link_to "Home", dashboard_url%>
+
 <form action="<%= user_url(current_user.id) %>" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="PUT">
   <input type="hidden"
