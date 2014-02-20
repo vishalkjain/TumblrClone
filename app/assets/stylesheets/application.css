@@ -192,6 +192,7 @@ header > ul > li {
   float: left;
   width: 100px;
   height: 100px;
+  margin-right: 5px;
 }
 
 .post-content {
@@ -243,4 +244,8 @@ header > ul > li {
 
 .hidden {
   display: none;
+}
+
+.blogname {
+  color: white;
 }

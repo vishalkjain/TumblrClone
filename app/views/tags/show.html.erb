@@ -1,15 +1,2 @@
-<h3><%=@tag.tag_name %> </h3>
-
-<ul>
-  <% @tagged_posts.each do |post|%>
-    <li> <%= post.user.username %></li>
-    <%= link_to post.title, post_url(post) %>
-    <%= post.body if post.body %>
-    <%= post.photo_url  if post.photo_url %>
-    <%= post.link_url if post.link_url %>
-    <h5> Tags: </h5> <% post.tags. each do |tag|%>
-    <h5><%= link_to "#"+tag.tag_name, tag_url(tag) %></h5>
-    <% end %>
-    <%= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
-  <% end %>
-</ul>
+<h3>#<%= @tag.tag_name %> </h3>
+<%= render "shared/feed" %>
