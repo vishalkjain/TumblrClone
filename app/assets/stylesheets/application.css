@@ -270,3 +270,7 @@ header > ul > li {
   background-color: white;
   float:right;
 }
+
+.tag-name {
+  color: white;
+}

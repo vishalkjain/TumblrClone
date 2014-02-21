@@ -4,7 +4,7 @@
     <ul class="post-content">
       <li><%= link_to @post.user.username, user_url(@post.user) %></li>
       <li><%= link_to @post.title, post_url(@post) %></li>
-      <li><%= @post.body if @post.body %></li>
+      <li><p><%= @post.body if @post.body %></p></li>
 
       <li>
         <ul>
