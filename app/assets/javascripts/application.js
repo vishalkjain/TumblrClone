@@ -17,9 +17,12 @@
 $(document).ready(function(){
   $(".new-post-content-before").click(function(){
     $("#new-post").addClass("hidden");
-    $("body > * ").addClass("darken");
-    $("#slide-down").addClass("lighten");
+
     $("#slide-down").slideDown(1000, function(){
+      // $("body > *").children(':not(#slide-down)').addClass("darken");
+
+      // $("#slide-down").removeClass("darken");
+      // $(".post").addClass("lighten");
 
       $("#post-form").removeClass("hidden");
     });

@@ -3,10 +3,10 @@
   <ul>
     <li><%= current_user.username %></li>
 
-    <li><%= link_to "Posts", user_url(current_user.id), class: "sidebar-link" %> </li>
-    <li><%= link_to "Followers", user_follows_url(current_user.id), class: "sidebar-link" %></li>
+    <li><%= link_to "Posts", user_url(current_user.id), class: "sidebar-link1" %> </li>
+    <li><%= link_to "Followers", user_follows_url(current_user.id), class: "sidebar-link2" %></li>
 
-    <li><%= link_to "Followed Blogs", followings_url, class: "sidebar-link" %></li>
+    <li><%= link_to "Followed Blogs", followings_url, class: "sidebar-link3" %></li>
     <li>
       <form action="<%= user_follows_url(current_user) %>" method="POST">
         <input type="hidden"
