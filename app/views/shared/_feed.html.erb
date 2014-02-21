@@ -45,7 +45,7 @@
   <li class="post">
     <%= image_tag post.user.avatar.url(:small), :class => "avatar" %>
     <ul class="post-content">
-      <li> <%= link_to post.user.username, user_url(post.user) %></li>
+      <li><%= link_to post.user.username, user_url(post.user) %></li>
       <li><%= link_to post.title, post_url(post) %></li>
       <li><%= post.body if post.body %></li>
       <%#= post.photo_url  if post.photo_url %>
@@ -59,12 +59,12 @@
       </li>
       <li>
         <% if post.user == current_user %>
-        <div id="edit-post" class="edit-post-content-before"><!-- class="edit-post-content-before">-->
+        <div id="edit-post" class="edit-post-content-before">
           <h4>Edit post </h4>
         </div>
         <%#= link_to("Edit Post", edit_post_url(post)) if post.user == current_user %>
         <div class="edit-post-form-container hidden">
-          <form action="<%= post_url(post) %>" method="POST" id="edit-post-form" class="">
+          <form action="<%= post_url(post) %>" method="POST" id="edit-post-form">
           <input type="hidden" name="_method" value="PUT">
           <input type="hidden"
                    name="authenticity_token"

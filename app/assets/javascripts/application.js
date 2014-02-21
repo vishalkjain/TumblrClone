@@ -31,15 +31,26 @@ $(document).ready(function(){
 
   $(".edit-post-content-before").click(function(event){
     $editdiv= $(event.currentTarget);
-    $editdiv.addClass("hidden");
-    console.log($editdiv.next());
+    // console.log($editdiv);
+    // console.log($editdiv.next());
     $editdiv.next().slideDown(1000, function(){
+
     });
+    //$form = $(".edit-post-form-container");
+    //$editdiv.addClass("hidden");
+    // $editdiv.next().removeClass("hidden");
+    //$form.toggle()//(1000, function(){
+      // $editdiv.next().closest("div").addClass("hidden");
+      //});
   });
 
    $(".edit-post-buttons").click(function(event){
-     $(event.currentTarget).parent().slideUp(1000, function(){
-
+     $target = $(event.currentTarget);
+     console.log($target.parent().parent().parent().find('div'));
+     $target.parents(".edit-post-form-container").slideUp(1000, function(){
      });
+     // $target.parent().slideUp(1000, function(){
+ //       //$target.parent().parent().parent().find('div').removeClass("hidden");
+ //     });
    });
 });
