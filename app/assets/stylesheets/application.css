@@ -208,6 +208,7 @@ header > ul > li {
 .sidebar{
   display:inline-block;
   padding-top: 10px;
+  position: absolute;
 }
 
 .sidebar li {
