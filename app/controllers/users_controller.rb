@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if current_user.update_attributes(params[:user])
       redirect_to dashboard_url
     else
-      render :json => @user.errors.full_messages
+      render :json => current_user.errors.full_messages
     end
   end
 end
