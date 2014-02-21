@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_signed_in!, :only => [:show]
   before_filter :require_signed_out!, :only => [:create, :new]
-  layout "sessions", :only=>[:new]
+  layout "sessions", :only => [:new]
   def new
     @user = User.new
   end
