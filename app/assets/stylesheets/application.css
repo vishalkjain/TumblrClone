@@ -222,6 +222,12 @@ header > ul > li {
 .sidebar a {
   color: #D4D4D4;
   text-decoration: none;
+  min-width: 200px;
+}
+
+.sidebar-link {
+/*  padding:10px 100px 10px 20px;
+*/  /*margin: 50px 0;*/
 }
 
 .clearfix:after {
