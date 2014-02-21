@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => {
           :small => "100x100#"
-          }, :default_url => "https://s3.amazonaws.com/vishal-tumblr-clone-dev/missing.png"
+          }, :default_url => "/assets/avatars/small/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def self.find_by_credentials(email, password)
