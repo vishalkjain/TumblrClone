@@ -40,6 +40,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'faker'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

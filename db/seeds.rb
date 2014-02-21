@@ -6,23 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Example seed file using faker
-# 100.times do |i|
-#   User.create(email: Faker::Internet.safe_email,
-#               password: Faker::Internet.password,
-#               name: Faker::Name.name)
-# end
+
+ # 50.times do |i|
+ #   User.create(email: Faker::Internet.safe_email,
+ #               password: "password",
+ #               username: Faker::Internet.user_name)
+ # end
 #
 # User.all.each do |user|
-#   user.contact_details.create(
-#     street_address: Faker::Address.street_address,
-#     city: Faker::Address.city,
-#     state: Faker::Address.state_abbr,
-#     zip: Faker::Address.zip[0..4],
-#     phone: Faker::PhoneNumber.phone_number,
-#     country: "United States",
-#     description: Faker::Lorem.paragraph(6),
-#     website: Faker::Internet.url)
+#   user.posts.create(
+#     title: Faker::Address.street_address,
+#     body: Faker::Lorem.paragraph(sentence_count=10),
 # end
 #
 # i = User.first.id
