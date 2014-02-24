@@ -381,6 +381,20 @@ header > ul > li {
   font-size: inherit;
 }
 
+.search-list {
+  width: 620px;
+  float:left;
+  display: inline-block;
+  padding: 10px 0;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
+}
+
+.search-result {
+  padding: 10px;
+}
+
 /*.darken {
   opacity: 0.5;
 }
