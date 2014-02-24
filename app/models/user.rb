@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include PgSearch
   attr_accessible :username, :password, :email, :avatar
   attr_reader :password
 
@@ -21,6 +22,8 @@ class User < ActiveRecord::Base
           :small => "100x100#"
           }, :default_url => "/assets/avatars/small/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  multisearchable :against => [:username, :email]
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

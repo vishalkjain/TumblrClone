@@ -4,6 +4,7 @@ Tumblrclone::Application.routes.draw do
     resources :follows, :only => [:index, :create, :destroy]
   end
 
+  resources :searches, :only => [:index]
   resources :followings, :only => [:index]
   # resources :users do
 #     resources :dashboard, :only => [:show]

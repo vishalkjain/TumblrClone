@@ -5,5 +5,7 @@
     <li><a href="<%=dashboard_url%>"><img src="https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/home_icon.png"></a></li>
     <li><a href="<%= edit_user_url(current_user.id) %>"><img src="https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/settings_icon.png"></a></li>
     <li><%= link_to image_tag("https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/log_off_icon.png"), session_url, :method=>:delete %></li>
+
+    <li><form action="<%=searches_url%>" method:"GET"><input type="text" name="search" placeholder="Search"> <input type="submit" value="search"></form></li>
   </ul>
 </header>

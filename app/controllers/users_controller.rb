@@ -40,4 +40,9 @@ class UsersController < ApplicationController
       render :json => current_user.errors.full_messages
     end
   end
+
+  def search
+    @results = PgSearch.multisearch(params[:search])
+    fail
+  end
 end

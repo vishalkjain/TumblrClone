@@ -1,0 +1,11 @@
+<h1>Search Results </h1>
+<ul>
+  <% @results.each do |result|%>
+    <% if result.searchable_type == "User"%>
+      <li><%= link_to result.content, user_url(result.id)%></li>
+    <%else%>
+      <li><%= link_to result.content, post_url(result.id)%></li>
+      <%end%>
+  <%end%>
+
+</ul>

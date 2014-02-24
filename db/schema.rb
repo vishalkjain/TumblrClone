@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140219144948) do
+ActiveRecord::Schema.define(:version => 20140224211006) do
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20140219144948) do
 
   add_index "follows", ["follow_id"], :name => "index_follows_on_follow_id"
   add_index "follows", ["user_id"], :name => "index_follows_on_user_id"
+
+  create_table "pg_search_documents", :force => true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
