@@ -35,11 +35,22 @@ $(document).ready(function(){
     });
   });
 
-  $(".edit-post-content-before").click(function(event){
+
+
+  $(".edit-post-toggle-btn").click(function(event){
+    $settingsButton = $(event.currentTarget)
+    $settingsButton.next().removeClass("hidden");
+
+  })
+
+
+  $(".edit-option").click(function(event){
+    // need to the target stuff
     $editdiv= $(event.currentTarget);
     // console.log($editdiv);
     // console.log($editdiv.next());
-    $editdiv.next().slideDown(1000, function(){
+    $editdiv.parent().parent().addClass("hidden");
+    $editdiv.parent().parent().parent().next().slideDown(1000, function(){
 
     });
     //$form = $(".edit-post-form-container");
