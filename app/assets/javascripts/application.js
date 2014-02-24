@@ -70,4 +70,11 @@ $(document).ready(function(){
  //       //$target.parent().parent().parent().find('div').removeClass("hidden");
  //     });
    });
+
+   $("#post-form").on("ajax:success", function(event, data){
+     console.log(data);
+     $(data).insertAfter(".create-new-post");
+     this.reset();
+
+   });
 });

@@ -1,0 +1,67 @@
+<li class="post">
+  <%= image_tag post.user.avatar.url(:small), :class => "avatar" %>
+  <ul class="post-content">
+    <li><%= link_to post.user.username, user_url(post.user) %></li>
+    <li><%= link_to post.title, post_url(post) %></li>
+    <li><p><%= post.body if post.body %></p></li>
+    <%#= post.photo_url  if post.photo_url %>
+    <%#= post.link_url if post.link_url %>
+
+    <!-- Tags -->
+    <li>
+      <ul>
+        <% post.tags.each do |tag|%>
+          <%= link_to "#" + tag.tag_name, tag_url(tag) %>
+        <% end %>
+      </ul>
+    </li>
+
+    <!-- Edit/Delete Post -->
+    <% if post.user == current_user %>
+
+    <li>
+      <div id="edit-post" class="edit-post-content-before">
+        <img src="https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/post_settings_icon.png" class="edit-post-toggle-btn">
+
+        <div class="edit-options hidden">
+          <ul>
+            <li class="edit-option">Edit</li>
+            <li class="delete-option"><%= button_to("Delete", post_url(post), method: :delete, class: "delete-button")%></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="edit-post-form-container hidden">
+        <form action="<%= post_url(post) %>" method="POST" id="edit-post-form">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden"
+                 name="authenticity_token"
+                 value="<%= form_authenticity_token %>">
+        <label>Title
+          <input type="text" name="post[title]" value="<%= post.title %>">
+        </label>
+        <br>
+
+        <label>Body
+        <textarea name="post[body]"><%= post.body %></textarea>
+        </label>
+        <br>
+
+        <label>Add Tag
+          <input type="text" name="tag[tag_name]" >
+        </label>
+        <br>
+          <% post.tags.each do |tag|%>
+          <h4 class="edit-tag">
+            <%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete %>
+          </h4>
+          <% end %>
+          <br>
+        <input type="submit" class="edit-post-buttons" value="Edit Text Post">
+        <button type="button" class="edit-post-buttons">Cancel</button>
+      </form>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</li>

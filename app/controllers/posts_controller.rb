@@ -12,14 +12,25 @@ class PostsController < ApplicationController
         @post.tags << Tag.find_or_create_by_tag_name(tagname)
       end
     end
-    #
-    # if request.xhr?
-    #   render partial: "post/post", locals: {}
-    if @post.save
-      redirect_to dashboard_url
-    else
+
+    if !@post.save
       render :json => @post.errors.full_messages
+    else
+      if request.xhr?
+        render partial: "posts/post", locals: {post: @post}
+      else
+        redirect_to dashboard_url
+      end
+
     end
+
+    # if request.xhr?
+ #      render partial: "post/post", locals: {post: @post}
+ #    if @post.save
+ #      redirect_to dashboard_url
+ #    else
+ #      render :json => @post.errors.full_messages
+ #    end
   end
 
   def show
