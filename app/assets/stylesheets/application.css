@@ -258,7 +258,7 @@ header > ul > li {
 .sidebar-link1 {
   border-bottom: 1px solid;
 
-  padding:10px 137px 10px 20px;
+  padding:10px 137px 10px 10px;
   /*margin: 50px 0;*/
 }
 
@@ -267,15 +267,24 @@ header > ul > li {
 .sidebar-link2 {
   border-bottom: 1px solid;
 
-  padding:10px 107px 10px 20px;
+  padding:10px 107px 10px 10px;
   /*margin: 50px 0;*/
 }
 
 .sidebar-link3 {
   border-bottom: 1px solid;
 
-  padding:10px 69px 10px 20px;
+  padding:10px 69px 10px 10px;
   /*margin: 50px 0;*/
+}
+
+#follow-text {
+  padding-left: 10px;
+}
+
+#follow-input {
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
 .clearfix:after {
