@@ -1,5 +1,5 @@
 <%= paginate @results %>
-<h1 id="search-name">Search Results for <%= @search_name %></h1>
+<h1 id="search-name">Search Results for "<%= @search_name %>"</h1>
 <ul class="search-list clearfix">
   <%= render @results.map(&:searchable) %>
   <%# @results.each do |result| %>

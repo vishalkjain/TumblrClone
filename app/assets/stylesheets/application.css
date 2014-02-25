@@ -226,7 +226,7 @@ header > ul > li {
 .sidebar{
   display:inline-block;
   padding-top: 10px;
-  position: absolute;
+  position: relative;
 }
 
 .sidebar li {
@@ -382,6 +382,10 @@ header > ul > li {
   border: none;
   background-color:inherit;
   font-size: inherit;
+}
+
+#search-name {
+  color:white;
 }
 
 .search-list {
