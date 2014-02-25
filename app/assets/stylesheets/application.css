@@ -56,7 +56,7 @@ html, body {
 .sign-in-form {
   margin: 200px auto;
   background: #fff;
-  width: 260px;
+  width: 300px;
   background-color: inherit;
 }
 
@@ -70,21 +70,22 @@ html, body {
   color: black;
   height: 20px;
   padding:10px;
-  width: 220px;
+  width: 280px;
   font-size: 1.1em;
   border-radius: 3px;
 }
 
 .sign-btn {
   height: 40px;
-  width: 242px;
+  width: 300px;
   padding: 5px 15px;
   background: #6CAAD2;
   border: 0 none;
   cursor: pointer;
   border-radius: 3px;
   color: white;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   text-decoration: none;
   font-size: 15px;
 }
@@ -103,6 +104,8 @@ html, body {
   text-decoration: none;
   opacity: 0.7;
 }
+
+
 
 footer {
   position: absolute;
