@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include PgSearch
-  attr_accessible :username, :password, :email, :avatar
+  attr_accessible :username, :password, :email, :avatar, :uid
   attr_reader :password
 
   validates :password_digest, :presence => true
@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     self.session_token = self.class.generate_session_token
     self.save!
     self.session_token
+  end
+
+  def self.create_from_fb_data(data)
+    User.create!(uid: data[:uid], email: data[:info][:email], username: data[:info][:name], password: Faker::Internet.password)
   end
 
   private

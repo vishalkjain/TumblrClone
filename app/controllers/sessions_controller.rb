@@ -6,11 +6,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:email],
-      params[:user][:password])
 
-    if user
-      sign_in(user)
+    if request.env['omniauth.auth']
+      fb_data = request.env['omniauth.auth']
+      @user = User.find_by_uid(fb_data[:uid])
+      unless @user
+        @user = User.create_from_fb_data(fb_data)
+      end
+    else
+      @user = User.find_by_credentials(params[:user][:email],
+        params[:user][:password])
+    end
+
+    if @user
+      sign_in(@user)
       redirect_to dashboard_url
     else
       render :json => "Credentials were wrong"
