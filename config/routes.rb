@@ -16,6 +16,7 @@ Tumblrclone::Application.routes.draw do
   resources :tags, :only => [:new, :create, :show]
   resources :taggings, :only => [:destroy]
 
+  get 'auth/facebook/callback' => 'sessions#create'
   #not working right now
   root :to => "users#new"
   # The priority is based upon order of creation:
