@@ -379,7 +379,7 @@ body.has-active-modal:before {
 
 }
 
-.edit-post-content-before{
+.grey-bar{
   background-color: #D9D9D9;
   height: 45px;
   width: 520px;
@@ -397,7 +397,7 @@ body.has-active-modal:before {
   padding: 10px;
   background-color:white;*/
 }
-
+/*
 .edit-post-content-after {
   min-height: 75px;
   height: 200px;
@@ -407,7 +407,7 @@ body.has-active-modal:before {
   padding: 10px;
   background-color: white;
   float:right;
-}
+}*/
 
 .edit-post-toggle-btn{
   float: right;
@@ -475,6 +475,10 @@ body.has-active-modal:before {
   display: inline-block;
 }
 
+.follow-button {
+  color: white;
+
+}
 
 /*.new-post-content-before{
   min-height: 40px;

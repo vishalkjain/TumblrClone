@@ -1,3 +1,6 @@
 <h1 class="blogname"><%= @user.username%>'s Blog </h1>
+<% if @potential_follow %>
+<%#= link_to "Follow "+@potential_follow.username, user_follows_url(@potential_follow), class: "follow-button" %>
+<%end%>
 <br>
 <%= render "shared/feed" %>

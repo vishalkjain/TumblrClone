@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   def show
 
     @user = User.find(params[:id])
+    unless current_user.followed_users.include?(@user)
+      @potential_follow = @user
+    end
     @posts = @user.posts
     # if params.include?(:id)
 #       @user = User.find(params[:id])

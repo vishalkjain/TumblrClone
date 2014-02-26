@@ -61,41 +61,36 @@ $(document).ready(function(){
   //start edit
   $(".posts").on("click", ".edit-option", function(event){
     $editdiv= $(event.currentTarget);
-    console.log($editdiv)
     $("body").addClass("has-active-modal");
-    $editdiv.parent().parent().parent().prev().hide();
-    // $editdiv.parent().parent().addClass("hidden");
-//     $editdiv.parent().parent().parent().addClass("hidden");
-//
-//     $editdiv.parent().parent().parent().parent().prev().hide();
+
+    //<ul class="post-content display-inline-block">
+    //console.log($editdiv.parent().parent().parent().prev());
+    //$editdiv.parent().parent().parent().prev().hide();
+    $editdiv.parent().parent().parent().prev().addClass("hidden");
+    //<div class="edit-post-form-container post-content post-form hidden">
+    //console.log($editdiv.parent().parent().parent().next());
     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
-     // console.log($editdiv.parent().parent().parent().parent());
 
       // $editdiv.closest(".post-info").hide();
     });
   })
-  // $(".edit-option").click(function(event){
-//     $editdiv= $(event.currentTarget);
-//
-//     $editdiv.parent().parent().addClass("hidden");
-//     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
-//
-//     });
-//
-//   });
+
 
   //finish/cancel edit
    $(".edit-post-buttons").click(function(event){
      $target = $(event.currentTarget);
-     console.log($target.parent().parent().parent().find('div'));
-     $target.parent().parent().prev().prev().show();
+     //show <ul class="post-content display-inline-block">
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
-       $("body").removeClass("has-active-modal");
-       //$target.parent().parent().prev().removeClass("hidden");
 
+       console.log($target.parent().parent().prev().prev());
+       //hits li.post for early posts, ul.post-content for later ones
+       //$target.parent().parent().prev().prev().show();
+       $target.parent().parent().prev().prev().removeClass("hidden");
+       $("body").removeClass("has-active-modal");
      });
    });
 
+   //UJS to add new post
    $("#post-form").on("ajax:success", function(event, data){
      console.log(data);
      $(data).insertAfter(".post");

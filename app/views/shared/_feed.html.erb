@@ -5,7 +5,10 @@
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
 
       <div id="new-post" class="post-content display-inline-block">
-        <h4>Create new post </h4>
+        <ul>
+        <li class="new-text-post"><h4>Create new post </h4></li>
+        <li class="new-photo-post"><h4>New Photo </h4></li>
+        </ul>
       </div>
 
 
@@ -34,6 +37,30 @@
         </form>
       </div>
 
+      <div id="slide-down" class="post-content post-form hidden">
+        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
+          <input type="hidden"
+                   name="authenticity_token"
+                   value="<%= form_authenticity_token %>">
+
+           <label>Title
+             <input type="text" name="post[title]">
+           </label>
+           <br>
+
+           <label>Photo URL
+           <input type="text" name="post[photo_url]">
+           </label>
+           <br>
+           <label>Tag
+             <input type="text" name="tag[tag_name]">
+           </label>
+           <br>
+          <input class="post-buttons" type="submit" value="Create Photo Post">
+          <button type="button" class="post-buttons">Cancel</button>
+        </form>
+      </div>
+
     </li>
   <% end %>
 
@@ -42,9 +69,7 @@
  <!-- List of posts -->
  <%= render partial: "posts/post", collection: @posts %>
   <%# @posts.each do |post|%>
-  <!-- Start of post -->
 
-  <!-- End of single post -->
   <%# end %>
 
 </ul>
