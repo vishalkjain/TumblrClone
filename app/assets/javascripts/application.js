@@ -15,9 +15,15 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $(".new-post-content-before").click(function(){
+  $("body").on("click", "#new-post", function(event){
+  //$(".new-post-content-before").click(function(){
+
+    $("body").addClass("has-active-modal");
     $("#new-post").addClass("hidden");
-    $("#slide-down").slideDown(1000, function(){
+    $("#new-post").removeClass("display-inline-block")
+    $("#slide-down").slideDown(800, function(){
+      $("#slide-down").addClass("display-inline-block")
+
       $("#post-form").removeClass("hidden");
     });
   });
@@ -27,6 +33,7 @@ $(document).ready(function(){
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(1000, function(){
       $("#new-post").removeClass("hidden");
+      $("body").removeClass("has-active-modal");
     });
   });
 

@@ -1,38 +1,39 @@
   <ul class="posts clearfix">
 
   <% if request.fullpath() == "/dashboard"%>
-    <li class="create-new-post">
+    <li class="post">
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
 
-      <div id="new-post" class="new-post-content-before">
+      <div id="new-post" class="post-content display-inline-block">
         <h4>Create new post </h4>
       </div>
 
-      <div id="slide-down" class="new-post-content-after hidden">
-        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
-          <input type="hidden"
-                   name="authenticity_token"
-                   value="<%= form_authenticity_token %>">
+      <!-- <section class="modal"> -->
+        <div id="slide-down" class="post-content post-form hidden">
+          <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
+            <input type="hidden"
+                     name="authenticity_token"
+                     value="<%= form_authenticity_token %>">
 
-          <label>Title
-            <input type="text" name="post[title]">
-          </label>
-          <br>
+            <label>Title
+              <input type="text" name="post[title]">
+            </label>
+            <br>
 
-          <label>Body
-          <textarea name="post[body]"></textarea>
-          </label>
-          <br>
+            <label>Body
+            <textarea name="post[body]"></textarea>
+            </label>
+            <br>
 
-          <label>Tag
-            <input type="text" name="tag[tag_name]">
-          </label>
-          <br>
-          <input class="post-buttons" type="submit" value="Create Text Post">
-          <button type="button" class="post-buttons">Cancel</button>
-
-        </form>
-      </div>
+            <label>Tag
+              <input type="text" name="tag[tag_name]">
+            </label>
+            <br>
+            <input class="post-buttons" type="submit" value="Create Text Post">
+            <button type="button" class="post-buttons">Cancel</button>
+          </form>
+        </div>
+      <!-- </section> -->
     </li>
   <% end %>
 
