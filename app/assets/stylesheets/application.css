@@ -296,9 +296,7 @@ header > ul > li {
   display:block;
 }
 
-.edit-tag:hover{
-  text-decoration:line-through;
-}
+
 
 .follow {
   width: 620px;
@@ -317,7 +315,9 @@ header > ul > li {
 .blogname {
   color: white;
 }
-
+.edit-post-form-container{
+  min-height: 10px;
+}
 .edit-post-content-before{
   background-color: #D9D9D9;
   height: 45px;
@@ -434,6 +434,26 @@ header > ul > li {
   background: rgba(0,0,0,0.5);
 }
 
+.delete-tag {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.delete-tag:hover {
+  text-decoration: line-through;
+
+}
+.edit-tags{
+/*  float: left;
+*/}
+
+  .edit-tags li {
+    font-size: inherit;
+  }
 /*.darken {
   opacity: 0.5;
 }

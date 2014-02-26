@@ -51,11 +51,14 @@
           <input type="text" name="tag[tag_name]" >
         </label>
         <br>
+        <ul class="edit-tags">
           <% post.tags.each do |tag|%>
-          <h4 class="edit-tag">
-            <%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete %>
-          </h4>
+
+           <li> <%= button_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete, class: "delete-tag" %>
+           </li>
+
           <% end %>
+        </ul>
           <br>
         <input type="submit" class="edit-post-buttons" value="Edit Text Post">
         <button type="button" class="edit-post-buttons">Cancel</button>

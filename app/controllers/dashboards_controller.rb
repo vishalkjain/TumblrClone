@@ -1,7 +1,6 @@
 class DashboardsController < ApplicationController
   include ActiveRecord::SpawnMethods
   def show
-    #@posts = Post.where()
     @myposts = current_user.posts.order(&:created_at).reverse_order
     @otherPosts = current_user.followed_posts.order(&:created_at).reverse_order
     #@posts = @myposts + @otherPosts
