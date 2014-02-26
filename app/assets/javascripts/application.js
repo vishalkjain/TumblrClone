@@ -59,8 +59,11 @@ $(document).ready(function(){
     $editdiv= $(event.currentTarget);
 
     $editdiv.parent().parent().addClass("hidden");
+    $editdiv.parent().parent().parent().parent().prev().hide();
     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
+      console.log($editdiv.parent().parent().parent().parent());
 
+      // $editdiv.closest(".post-info").hide();
     });
   })
   // $(".edit-option").click(function(event){

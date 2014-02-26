@@ -431,10 +431,13 @@ body.has-active-modal:before {
 /*  border: 2px solid black;*/
   width: 500px;
   min-height: 120px;
+
 /*  display:inline-block;
 */  background-color: #fff;
   border-radius: 5px;
   padding: 10px;
+/*  Edit the padding bottom here to fix bottom bar overlap
+*/  padding-bottom: 60px;
   position: relative;
   float:right;
 }

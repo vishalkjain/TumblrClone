@@ -2,6 +2,7 @@
   <%= image_tag post.user.avatar.url(:small), :class => "avatar" %>
 
   <ul class="post-content display-inline-block">
+    <div class="post-info">
     <li><%= link_to post.user.username, user_url(post.user) %></li>
     <li><%= link_to post.title, post_url(post) %></li>
     <li><p><%= post.body if post.body %></p></li>
@@ -16,7 +17,7 @@
         <% end %>
       </ul>
     </li>
-
+    </div>
     <!-- Edit/Delete Post -->
     <% if post.user == current_user %>
 
