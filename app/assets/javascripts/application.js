@@ -39,8 +39,29 @@ $(document).ready(function(){
 
   $(".posts").on("click", ".edit-post-toggle-btn", function(event){
     $settingsButton = $(event.currentTarget)
-    $settingsButton.next().removeClass("hidden");
+    $settingsButton.next().show();
+    event.stopPropagation();
   });
+
+  $(document).click(function(){
+    $(".edit-options").hide();
+  })
+
+  // $("body").on("click", function(event){
+//     $target = $(event.target)
+//     if($(".edit-options").is(":visible")){
+//       $(".edit-options").addClass("hidden")
+//
+//     }
+//   });
+
+
+    // if($target).not(".edit-options"){
+ //      $(".edit-options").addClass("hidden")
+ //    }
+
+
+
 
   // $(".edit-post-toggle-btn").click(function(event){
 //     $settingsButton = $(event.currentTarget)
