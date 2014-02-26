@@ -15,6 +15,8 @@
 //= require_tree .
 
 $(document).ready(function(){
+
+  //start new post
   $("body").on("click", "#new-post", function(event){
   //$(".new-post-content-before").click(function(){
 
@@ -28,7 +30,7 @@ $(document).ready(function(){
     });
   });
 
-
+  //finish or cancel new post
   $(".post-buttons").click(function(){
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(1000, function(){
@@ -37,6 +39,7 @@ $(document).ready(function(){
     });
   });
 
+  //gear button stuff
   $(".posts").on("click", ".edit-post-toggle-btn", function(event){
     $settingsButton = $(event.currentTarget)
     $settingsButton.next().show();
@@ -55,13 +58,18 @@ $(document).ready(function(){
 //
 //   })
 
+  //start edit
   $(".posts").on("click", ".edit-option", function(event){
     $editdiv= $(event.currentTarget);
-
-    $editdiv.parent().parent().addClass("hidden");
-    $editdiv.parent().parent().parent().parent().prev().hide();
+    console.log($editdiv)
+    $("body").addClass("has-active-modal");
+    $editdiv.parent().parent().parent().prev().hide();
+    // $editdiv.parent().parent().addClass("hidden");
+//     $editdiv.parent().parent().parent().addClass("hidden");
+//
+//     $editdiv.parent().parent().parent().parent().prev().hide();
     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
-      console.log($editdiv.parent().parent().parent().parent());
+     // console.log($editdiv.parent().parent().parent().parent());
 
       // $editdiv.closest(".post-info").hide();
     });
@@ -76,12 +84,16 @@ $(document).ready(function(){
 //
 //   });
 
+  //finish/cancel edit
    $(".edit-post-buttons").click(function(event){
      $target = $(event.currentTarget);
      console.log($target.parent().parent().parent().find('div'));
+     $target.parent().parent().prev().prev().show();
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
-     });
+       $("body").removeClass("has-active-modal");
+       //$target.parent().parent().prev().removeClass("hidden");
 
+     });
    });
 
    $("#post-form").on("ajax:success", function(event, data){
