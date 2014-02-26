@@ -17,16 +17,11 @@
 $(document).ready(function(){
   $(".new-post-content-before").click(function(){
     $("#new-post").addClass("hidden");
-
     $("#slide-down").slideDown(1000, function(){
-      // $("body > *").children(':not(#slide-down)').addClass("darken");
-
-      // $("#slide-down").removeClass("darken");
-      // $(".post").addClass("lighten");
-
       $("#post-form").removeClass("hidden");
     });
   });
+
 
   $(".post-buttons").click(function(){
     $("#post-form").addClass("hidden");
@@ -35,40 +30,41 @@ $(document).ready(function(){
     });
   });
 
-
-
-  $(".edit-post-toggle-btn").click(function(event){
+  $(".posts").on("click", ".edit-post-toggle-btn", function(event){
     $settingsButton = $(event.currentTarget)
     $settingsButton.next().removeClass("hidden");
+  });
 
-  })
+  // $(".edit-post-toggle-btn").click(function(event){
+//     $settingsButton = $(event.currentTarget)
+//     $settingsButton.next().removeClass("hidden");
+//
+//   })
 
-
-  $(".edit-option").click(function(event){
-    // need to the target stuff
+  $(".posts").on("click", ".edit-option", function(event){
     $editdiv= $(event.currentTarget);
-    // console.log($editdiv);
-    // console.log($editdiv.next());
+
     $editdiv.parent().parent().addClass("hidden");
     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
 
     });
-    //$form = $(".edit-post-form-container");
-    //$editdiv.addClass("hidden");
-    // $editdiv.next().removeClass("hidden");
-    //$form.toggle()//(1000, function(){
-      // $editdiv.next().closest("div").addClass("hidden");
-      //});
-  });
+  })
+  // $(".edit-option").click(function(event){
+//     $editdiv= $(event.currentTarget);
+//
+//     $editdiv.parent().parent().addClass("hidden");
+//     $editdiv.parent().parent().parent().next().slideDown(1000, function(){
+//
+//     });
+//
+//   });
 
    $(".edit-post-buttons").click(function(event){
      $target = $(event.currentTarget);
      console.log($target.parent().parent().parent().find('div'));
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
      });
-     // $target.parent().slideUp(1000, function(){
- //       //$target.parent().parent().parent().find('div').removeClass("hidden");
- //     });
+
    });
 
    $("#post-form").on("ajax:success", function(event, data){
