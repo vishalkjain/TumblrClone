@@ -8,32 +8,32 @@
         <h4>Create new post </h4>
       </div>
 
-      <!-- <section class="modal"> -->
-        <div id="slide-down" class="post-content post-form hidden">
-          <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
-            <input type="hidden"
-                     name="authenticity_token"
-                     value="<%= form_authenticity_token %>">
 
-            <label>Title
-              <input type="text" name="post[title]">
-            </label>
-            <br>
+      <div id="slide-down" class="post-content post-form hidden">
+        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
+          <input type="hidden"
+                   name="authenticity_token"
+                   value="<%= form_authenticity_token %>">
 
-            <label>Body
-            <textarea name="post[body]"></textarea>
-            </label>
-            <br>
+          <label>Title
+            <input type="text" name="post[title]">
+          </label>
+          <br>
 
-            <label>Tag
-              <input type="text" name="tag[tag_name]">
-            </label>
-            <br>
-            <input class="post-buttons" type="submit" value="Create Text Post">
-            <button type="button" class="post-buttons">Cancel</button>
-          </form>
-        </div>
-      <!-- </section> -->
+          <label>Body
+          <textarea name="post[body]"></textarea>
+          </label>
+          <br>
+
+          <label>Tag
+            <input type="text" name="tag[tag_name]">
+          </label>
+          <br>
+          <input class="post-buttons" type="submit" value="Create Text Post">
+          <button type="button" class="post-buttons">Cancel</button>
+        </form>
+      </div>
+
     </li>
   <% end %>
 

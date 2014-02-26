@@ -47,20 +47,6 @@ $(document).ready(function(){
     $(".edit-options").hide();
   })
 
-  // $("body").on("click", function(event){
-//     $target = $(event.target)
-//     if($(".edit-options").is(":visible")){
-//       $(".edit-options").addClass("hidden")
-//
-//     }
-//   });
-
-
-    // if($target).not(".edit-options"){
- //      $(".edit-options").addClass("hidden")
- //    }
-
-
 
 
   // $(".edit-post-toggle-btn").click(function(event){
@@ -97,7 +83,7 @@ $(document).ready(function(){
 
    $("#post-form").on("ajax:success", function(event, data){
      console.log(data);
-     $(data).insertAfter(".create-new-post");
+     $(data).insertAfter(".post");
      this.reset();
 
    });
