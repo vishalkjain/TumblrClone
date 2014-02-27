@@ -411,6 +411,10 @@ body.has-active-modal:before {
 #new-post {
   padding-bottom: 15px;
 }
+
+#new-post h4 {
+  margin: 0px;
+}
 .edit-post-toggle-btn{
   float: right;
   padding: 10px;
@@ -518,4 +522,13 @@ body.has-active-modal:before {
   cursor: pointer;
   width:16px;
   height:16px;
+}
+
+.format-options {
+  margin: 0 auto;
+}
+
+.format-options > img {
+  padding-left: 5px;
+  padding-right: 5px;
 }

@@ -17,20 +17,23 @@
           <input type="hidden"
                    name="authenticity_token"
                    value="<%= form_authenticity_token %>">
-          <input type="hidden" name="myDoc">
 
-          <label>Title
-            <input type="text" name="post[title]">
+          <label>
+            <input type="text" name="post[title]" placeholder="Title" style="width:475px;">
           </label>
           <br>
-          <img class="format-option" onclick="edit('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
-          <img class="format-option" onclick="edit('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
-          <img class="format-option" onclick="edit('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
-          <img class="format-option" onclick="edit('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
-          <img class="format-option" onclick="edit('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
-          <img class="format-option" onclick="edit('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
-          <img class="format-option" onclick="edit('nsertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+          <div class="format-options">
+            <img class="format-option" onclick="edit('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
+            <img class="format-option" onclick="edit('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
+            <img class="format-option" onclick="edit('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
+            <img class="format-option" onclick="edit('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
+            <img class="format-option" onclick="edit('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
+            <img class="format-option" onclick="edit('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
+            <img class="format-option" onclick="edit('insertOrderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+            <img class="format-option" onclick="edit('insertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+            <img class="format-option" onclick="edit('underline');" src="/assets/editor/iconmonstr-underline-icon-16.png" />
 
+          </div>
           <label>
           <div id="postarea" name="post[body]" contenteditable="true" style="width:475px; height:100px; border: 1px solid black"></div>
           <!-- <textarea name="post[body]" id="postarea" ></textarea> -->
@@ -43,8 +46,8 @@
             <input type="text" name="tag[tag_name]">
           </label>
           <br>
-          <input class="post-buttons" type="submit" value="Create Text Post">
-          <button type="button" class="post-buttons">Cancel</button>
+          <input class="post-buttons" type="submit" value="Create Text Post" style="float:left">
+          <button type="button" class="post-buttons" style="float:right">Cancel</button>
         </form>
       </div>
 

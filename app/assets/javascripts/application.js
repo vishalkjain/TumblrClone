@@ -63,16 +63,21 @@ $(document).ready(function(){
 
   //start edit
   $(".posts").on("click", ".edit-option", function(event){
-    $editdiv= $(event.currentTarget);
+    $target= $(event.currentTarget);
+    $greybar = $target.parents(".grey-bar");
     $("body").addClass("has-active-modal");
 
     //<ul class="post-content display-inline-block">
     //console.log($editdiv.parent().parent().parent().prev());
     //$editdiv.parent().parent().parent().prev().hide();
-    $editdiv.parent().parent().parent().prev().addClass("hidden");
+    $greybar.prev().addClass("hidden");
     //<div class="edit-post-form-container post-content post-form hidden">
     //console.log($editdiv.parent().parent().parent().next());
-    $editdiv.parent().parent().parent().next().slideDown(1000, function(){
+    $greybar.next().slideDown(1000, function(){
+      console.log($(".hidden-post-edit-area").val());
+      $(".edit-post-area").html($greybar.next().find(".hidden-post-edit-area").val());
+     // $(".edit-post-area").html($(".hidden-post-edit-area").val());
+      //$("#hidden-post-area").val(postarea.innerHTML);
 
       // $editdiv.closest(".post-info").hide();
     });
@@ -85,10 +90,10 @@ $(document).ready(function(){
      //show <ul class="post-content display-inline-block">
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
 
-       console.log($target.parent().parent().prev().prev());
+       //console.log($target.parent().parent().prev().prev());
        //hits li.post for early posts, ul.post-content for later ones
        //$target.parent().parent().prev().prev().show();
-       $target.parent().parent().prev().prev().removeClass("hidden");
+       $target.parents(".edit-post-form-container").prev().prev().removeClass("hidden");
        $("body").removeClass("has-active-modal");
      });
    });

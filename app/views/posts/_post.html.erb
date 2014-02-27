@@ -45,19 +45,35 @@
                  name="authenticity_token"
                  value="<%= form_authenticity_token %>">
       <label>Title
-        <input type="text" name="post[title]" value="<%= post.title %>">
+        <input type="text" name="post[title]" value="<%= post.title %>" style="width:475px;">
       </label>
       <br>
+      <div class="format-options">
+        <img class="format-option" onclick="edit('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
+        <img class="format-option" onclick="edit('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
+        <img class="format-option" onclick="edit('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
+        <img class="format-option" onclick="edit('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
+        <img class="format-option" onclick="edit('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
+        <img class="format-option" onclick="edit('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
+        <img class="format-option" onclick="edit('insertOrderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+        <img class="format-option" onclick="edit('insertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+        <img class="format-option" onclick="edit('underline');" src="/assets/editor/iconmonstr-underline-icon-16.png" />
+
+      </div>
 
       <label>Body
-        <textarea name="post[body]"><%= post.body %></textarea>
+        <div class="edit-post-area" name="post[body]" contenteditable="true" style="width:475px; height:100px; border: 1px solid black" ></div>
+        <!-- <textarea name="post[body]"><%= post.body %></textarea> -->
       </label>
         <br>
+
+      <input name="post[body]" class="hidden-post-edit-area" value="<%= post.body %>" style="display:none;">
 
       <label>Add Tag
         <input type="text" name="tag[tag_name]" >
       </label>
         <br>
+
       <ul class="edit-tags">
         <% post.tags.each do |tag|%>
 
@@ -67,8 +83,8 @@
         <% end %>
       </ul>
       <br>
-      <input type="submit" class="edit-post-buttons" value="Edit Text Post">
-      <button type="button" class="edit-post-buttons">Cancel</button>
+      <input type="submit" class="edit-post-buttons" value="Edit Text Post" style="float:left">
+      <button type="button" class="edit-post-buttons" style="float:right">Cancel</button>
     </form>
   </div>
 
