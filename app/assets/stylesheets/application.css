@@ -408,7 +408,9 @@ body.has-active-modal:before {
   background-color: white;
   float:right;
 }*/
-
+#new-post {
+  padding-bottom: 15px;
+}
 .edit-post-toggle-btn{
   float: right;
   padding: 10px;
@@ -512,3 +514,8 @@ body.has-active-modal:before {
   opacity: 1;
 }*/
 
+.format-option {
+  cursor: pointer;
+  width:16px;
+  height:16px;
+}

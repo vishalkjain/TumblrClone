@@ -9,7 +9,7 @@
 
     <li><%= link_to post.user.username, user_url(post.user) %></li>
     <li><%= link_to post.title, post_url(post) %></li>
-    <li><p><%= post.body if post.body %></p></li>
+    <li><p><%= post.body.html_safe if post.body %></p></li>
   <%#= post.photo_url  if post.photo_url %>
   <%#= post.link_url if post.link_url %>
 
@@ -71,7 +71,5 @@
       <button type="button" class="edit-post-buttons">Cancel</button>
     </form>
   </div>
-
-
 
 </li>

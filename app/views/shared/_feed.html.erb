@@ -5,6 +5,7 @@
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
 
       <div id="new-post" class="post-content display-inline-block">
+        <img src="/assets/logos/iconmonstr-font-size-icon-64.png">
         <h4>Create new post </h4>
         <!-- <li class="new-photo-post"><h4>New Photo </h4></li> -->
 
@@ -12,20 +13,31 @@
 
 
       <div id="slide-down" class="post-content post-form hidden">
-        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
+        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true" >
           <input type="hidden"
                    name="authenticity_token"
                    value="<%= form_authenticity_token %>">
+          <input type="hidden" name="myDoc">
 
           <label>Title
             <input type="text" name="post[title]">
           </label>
           <br>
+          <img class="format-option" onclick="edit('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
+          <img class="format-option" onclick="edit('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
+          <img class="format-option" onclick="edit('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
+          <img class="format-option" onclick="edit('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
+          <img class="format-option" onclick="edit('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
+          <img class="format-option" onclick="edit('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
+          <img class="format-option" onclick="edit('nsertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
 
-          <label>Body
-          <textarea name="post[body]"></textarea>
+          <label>
+          <div id="postarea" name="post[body]" contenteditable="true" style="width:475px; height:100px; border: 1px solid black"></div>
+          <!-- <textarea name="post[body]" id="postarea" ></textarea> -->
           </label>
           <br>
+
+          <input name="post[body]" id="hidden-post-area" style="display:none;">
 
           <label>Tag
             <input type="text" name="tag[tag_name]">

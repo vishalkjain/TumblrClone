@@ -19,7 +19,7 @@ $(document).ready(function(){
   //start new post
   $("body").on("click", "#new-post", function(event){
   //$(".new-post-content-before").click(function(){
-
+    getEditorDiv();
     $("body").addClass("has-active-modal");
     $("#new-post").addClass("hidden");
     $("#new-post").removeClass("display-inline-block")
@@ -32,6 +32,9 @@ $(document).ready(function(){
 
   //finish or cancel new post
   $(".post-buttons").click(function(){
+    $("#hidden-post-area").val(postarea.innerHTML);
+    // $("#post-form")[0].reset();
+//     $("#postarea").html("");
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(1000, function(){
       $("#new-post").removeClass("hidden");
@@ -93,8 +96,26 @@ $(document).ready(function(){
    //UJS to add new post
    $("#post-form").on("ajax:success", function(event, data){
      console.log(data);
-     $(data).insertAfter(".post");
+     $(data).insertAfter(".post:first-child");
      this.reset();
 
    });
 });
+
+
+var postarea;
+
+function getEditorDiv() {
+  postarea = document.getElementById("postarea");
+
+}
+
+function edit(command, value) {
+  document.execCommand(command, false, value);
+  postarea.focus();
+  console.log(postarea.innerHTML);
+}
+
+
+
+
