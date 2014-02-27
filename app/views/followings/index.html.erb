@@ -6,8 +6,9 @@
   <% else %>
     <h1>Following <%= num_followed %> people</h1>
   <% end %>
-
+  <ul>
   <% @followed_users.each do |user| %>
     <li><%= image_tag user.avatar.url(:small), :height => '40', :width => '40', :class => "thumbnail" %> <%=link_to user.username, user_url(user) %> <%= button_to "Unfollow", user_follow_url(current_user.id, user.id), method: :delete %></li>
   <% end %>
+  </ul>
 </ul>

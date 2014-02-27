@@ -3,7 +3,8 @@
   <% if request.fullpath() == "/dashboard"%>
     <li class="post">
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
-
+      <!-- triangle -->
+      <div class="tri"></div>
       <div id="new-post" class="post-content display-inline-block">
         <img src="/assets/logos/iconmonstr-font-size-icon-64.png">
         <h4>Create new post </h4>
@@ -23,15 +24,15 @@
           </label>
           <br>
           <div class="format-options">
-            <img class="format-option" onclick="edit('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
-            <img class="format-option" onclick="edit('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
-            <img class="format-option" onclick="edit('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
-            <img class="format-option" onclick="edit('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
-            <img class="format-option" onclick="edit('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
-            <img class="format-option" onclick="edit('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
-            <img class="format-option" onclick="edit('insertOrderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
-            <img class="format-option" onclick="edit('insertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
-            <img class="format-option" onclick="edit('underline');" src="/assets/editor/iconmonstr-underline-icon-16.png" />
+            <img class="format-option" onclick="add('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
+            <img class="format-option" onclick="add('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
+            <img class="format-option" onclick="add('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
+            <img class="format-option" onclick="add('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
+            <img class="format-option" onclick="add('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
+            <img class="format-option" onclick="add('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
+            <img class="format-option" onclick="add('insertOrderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+            <img class="format-option" onclick="add('insertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
+            <img class="format-option" onclick="add('underline');" src="/assets/editor/iconmonstr-underline-icon-16.png" />
 
           </div>
           <label>
@@ -42,8 +43,8 @@
 
           <input name="post[body]" id="hidden-post-area" style="display:none;">
 
-          <label>Tag
-            <input type="text" name="tag[tag_name]">
+          <label>
+            <input type="text" name="tag[tag_name]" placeholder="Tags">
           </label>
           <br>
           <input class="post-buttons" type="submit" value="Create Text Post" style="float:left">

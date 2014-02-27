@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   //start new post
   $("body").on("click", "#new-post", function(event){
-  //$(".new-post-content-before").click(function(){
+
     getEditorDiv();
     $("body").addClass("has-active-modal");
     $("#new-post").addClass("hidden");
@@ -33,8 +33,7 @@ $(document).ready(function(){
   //finish or cancel new post
   $(".post-buttons").click(function(){
     $("#hidden-post-area").val(postarea.innerHTML);
-    // $("#post-form")[0].reset();
-//     $("#postarea").html("");
+
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(1000, function(){
       $("#new-post").removeClass("hidden");
@@ -55,44 +54,34 @@ $(document).ready(function(){
 
 
 
-  // $(".edit-post-toggle-btn").click(function(event){
-//     $settingsButton = $(event.currentTarget)
-//     $settingsButton.next().removeClass("hidden");
-//
-//   })
 
   //start edit
   $(".posts").on("click", ".edit-option", function(event){
     $target= $(event.currentTarget);
     $greybar = $target.parents(".grey-bar");
+    getEditorDiv2($greybar.next().find(".edit-post-area"));
+    console.log("should be div");
+    console.log($greybar.next().find(".edit-post-area"));
     $("body").addClass("has-active-modal");
 
-    //<ul class="post-content display-inline-block">
-    //console.log($editdiv.parent().parent().parent().prev());
-    //$editdiv.parent().parent().parent().prev().hide();
     $greybar.prev().addClass("hidden");
-    //<div class="edit-post-form-container post-content post-form hidden">
-    //console.log($editdiv.parent().parent().parent().next());
+
     $greybar.next().slideDown(1000, function(){
       console.log($(".hidden-post-edit-area").val());
-      $(".edit-post-area").html($greybar.next().find(".hidden-post-edit-area").val());
-     // $(".edit-post-area").html($(".hidden-post-edit-area").val());
-      //$("#hidden-post-area").val(postarea.innerHTML);
+      editpostarea.html($greybar.next().find(".hidden-post-edit-area").val());
 
-      // $editdiv.closest(".post-info").hide();
     });
   })
 
 
   //finish/cancel edit
-   $(".edit-post-buttons").click(function(event){
+  $(".posts").on("click", ".edit-post-buttons", function(event){
+
      $target = $(event.currentTarget);
-     //show <ul class="post-content display-inline-block">
+     $target.siblings(".hidden-post-edit-area").val(editpostarea.html());
+
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
 
-       //console.log($target.parent().parent().prev().prev());
-       //hits li.post for early posts, ul.post-content for later ones
-       //$target.parent().parent().prev().prev().show();
        $target.parents(".edit-post-form-container").prev().prev().removeClass("hidden");
        $("body").removeClass("has-active-modal");
      });
@@ -115,12 +104,22 @@ function getEditorDiv() {
 
 }
 
-function edit(command, value) {
+function add(command, value) {
   document.execCommand(command, false, value);
   postarea.focus();
   console.log(postarea.innerHTML);
 }
 
+var editpostarea;
 
+function getEditorDiv2(div){
+  editpostarea = div;
 
+}
+
+function edit(command, value) {
+  document.execCommand(command, false, value);
+  editpostarea.focus();
+
+}
 

@@ -532,3 +532,25 @@ body.has-active-modal:before {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.tri {
+  content: "";
+  display: block;
+
+  position: absolute;
+
+  top: 30px;
+  left: 50px;
+
+  /*margin-left: 50px;
+  margin-right: -50px;*/
+
+  width: 0;
+  height: 0;
+
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fff;
+}
+
