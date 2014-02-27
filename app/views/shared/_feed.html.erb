@@ -5,10 +5,9 @@
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
 
       <div id="new-post" class="post-content display-inline-block">
-        <ul>
-        <li class="new-text-post"><h4>Create new post </h4></li>
-        <li class="new-photo-post"><h4>New Photo </h4></li>
-        </ul>
+        <h4>Create new post </h4>
+        <!-- <li class="new-photo-post"><h4>New Photo </h4></li> -->
+
       </div>
 
 
@@ -37,7 +36,7 @@
         </form>
       </div>
 
-      <div id="slide-down" class="post-content post-form hidden">
+      <!-- <div id="slide-down" class="post-content post-form hidden">
         <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
           <input type="hidden"
                    name="authenticity_token"
@@ -59,7 +58,7 @@
           <input class="post-buttons" type="submit" value="Create Photo Post">
           <button type="button" class="post-buttons">Cancel</button>
         </form>
-      </div>
+      </div> -->
 
     </li>
   <% end %>
