@@ -45,7 +45,7 @@
       <input type="hidden"
                  name="authenticity_token"
                  value="<%= form_authenticity_token %>">
-      <label>Title
+      <label>
         <input type="text" name="post[title]" value="<%= post.title %>" style="width:475px;">
       </label>
       <br>
@@ -62,7 +62,7 @@
 
       </div>
 
-      <label>Body
+      <label>
         <div id="edit-post-area" class="edit-post-area" name="post[body]" contenteditable="true" style="width:475px; height:100px; border: 1px solid black; overflow: hidden" ></div>
         <!-- <textarea name="post[body]"><%= post.body %></textarea> -->
       </label>

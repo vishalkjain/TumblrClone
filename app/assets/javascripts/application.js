@@ -63,7 +63,7 @@ $(document).ready(function(){
     $greybar.next().slideDown(1000, function(){
       console.log($(".hidden-post-edit-area").val());
       editpostarea.html($greybar.next().find(".hidden-post-edit-area").val());
-
+      console.log($greybar.next().find(".hidden-post-edit-area").val());
     });
   })
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
      $target = $(event.currentTarget);
      $target.siblings(".hidden-post-edit-area").val(editpostarea.html());
-
+     console.log(editpostarea.html());
      $target.parents(".edit-post-form-container").slideUp(1000, function(){
 
        $target.parents(".edit-post-form-container").prev().prev().removeClass("hidden");

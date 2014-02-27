@@ -45,7 +45,7 @@ gem 'pg_search'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'kaminari'
-
+gem "letter_opener", :group => :development
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
