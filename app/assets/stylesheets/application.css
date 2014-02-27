@@ -39,7 +39,8 @@ html, body {
 }
 
 .sign {
-  background-color: #3E5873;
+/*  background-color: #3E5873;
+*/  background-image: url("/assets/tumblrbg.jpg");
 }
 
 /*.sign-in-form {
@@ -62,6 +63,11 @@ html, body {
 
 .sign-in-form > h1 {
   color: white;
+  text-shadow: 2px 2px #000;
+  font-size: 40px;
+  margin-bottom: 10px;
+
+
 }
 
 .sign-input {
@@ -466,7 +472,8 @@ body.has-active-modal:before {
 
 .post-form {
 /*  min-height: 141px;
-*/  height: 200px;
+*/ /* height: 200px;*/
+  min-height: 200px;
   width: 500px;
   border-radius: 5px;
   padding: 10px;
