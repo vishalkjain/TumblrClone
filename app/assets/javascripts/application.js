@@ -18,14 +18,12 @@ $(document).ready(function(){
 
   //start new post
   $("body").on("click", "#new-post", function(event){
-
     getEditorDiv();
     $("body").addClass("has-active-modal");
     $("#new-post").addClass("hidden");
     $("#new-post").removeClass("display-inline-block")
     $("#slide-down").slideDown(800, function(){
       $("#slide-down").addClass("display-inline-block")
-
       $("#post-form").removeClass("hidden");
     });
   });
@@ -33,7 +31,6 @@ $(document).ready(function(){
   //finish or cancel new post
   $(".post-buttons").click(function(){
     $("#hidden-post-area").val(postarea.innerHTML);
-
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(1000, function(){
       $("#new-post").removeClass("hidden");
@@ -51,9 +48,6 @@ $(document).ready(function(){
   $(document).click(function(){
     $(".edit-options").hide();
   })
-
-
-
 
   //start edit
   $(".posts").on("click", ".edit-option", function(event){
@@ -92,8 +86,8 @@ $(document).ready(function(){
      console.log(data);
      $(data).insertAfter(".post:first-child");
      this.reset();
-
    });
+
 });
 
 
@@ -120,6 +114,5 @@ function getEditorDiv2(div){
 function edit(command, value) {
   document.execCommand(command, false, value);
   editpostarea.focus();
-
 }
 
