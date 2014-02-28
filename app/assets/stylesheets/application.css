@@ -678,3 +678,8 @@ body.has-active-modal:before {
 .user_search_result:hover{
   color: grey;
 }
+
+.pagination {
+  background-color: white;
+  width: 225px;
+}
