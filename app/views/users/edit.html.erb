@@ -8,12 +8,18 @@
            value="<%= form_authenticity_token %>">
 
   <label>Username
-    <input type="text" name="user[username]"  value="<%= current_user.username %>">
+    <input type="text" name="user[username]"  value="<%= current_user.username %>" style="width: 200px; padding: 3px; font-size:16px;">
   </label>
+  <br>
   <br>
 
   <div class="field">Avatar<input type="file" name="user[avatar]"></div>
+  <br>
+  Current avatar:
+  <br>
+  <%= image_tag current_user.avatar.url(:small), :class => "edit-avatar" %>
 
   <br>
-  <input type="submit" value="Save Edits">
+  <br>
+  <input type="submit" value="Save Edits" class="post-buttons-save-user-edits">
 </form>

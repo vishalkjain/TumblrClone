@@ -128,8 +128,9 @@ header {
 header > h1 {
   float:left;
   color: white;
-  font-size: 40px;
+  font-size: 50px;
   font-family: serif;
+  margin-top: 17px;
 }
 
 header > ul {
@@ -258,6 +259,7 @@ header > ul > li {
   background-color: white;
   border-radius: 5px;
   margin: 10px 10px 10px 0;
+  padding-left: 15px;
 }
 
 .hidden {
@@ -265,7 +267,8 @@ header > ul > li {
 }
 
 .blogname {
-  color: white;
+  color: #fff;
+  margin-bottom: 0px;
 }
 
 
@@ -561,3 +564,106 @@ body.has-active-modal:before {
   border-right: 10px solid #fff;
 }
 
+.tag-input-bar {
+  width: 475px;
+}
+
+.post-buttons{
+  border: 0;
+  background-color: #529ecc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+.post-buttons:hover{
+  background-color:#458BB5;
+}
+
+.edit-post-buttons {
+  border: 0;
+  background-color: #529ecc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+.edit-post-buttons:hover {
+  background-color:#458BB5;
+}
+
+.edit-avatar {
+
+  width: 65px;
+  height: 65px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.unfollow-button{
+  border: 0;
+  background-color: #529ecc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-right: 10px;
+  margin-top: 20px;
+  float: right;
+}
+
+.unfollow-button:hover {
+  background-color:#458BB5;
+}
+
+.follow-li {
+  border-bottom: 1px solid #ccc;
+}
+
+.follow-ul {
+  border-top: 1px solid #ccc;
+}
+.post-buttons-save-user-edits{
+  border: 0;
+  background-color: #529ecc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-right: 10px;
+}
+
+.post-buttons-save-user-edits:hover{
+  background-color:#458BB5;
+}
+
+.post-title {
+  font-size: 20px;
+  text-decoration:none;
+  color: #000;
+  font-weight: bold;
+}
+.post-title:hover {
+  color: grey;
+}
+.post-username {
+  text-decoration: none;
+  color: #000;
+}
+
+.post-username:hover {
+  color: grey;
+}
+
+.post-tags {
+  color: #858585;
+  text-decoration: none;
+}
+
+.post-tags:hover {
+  color: #666565;
+}
+
+.user_search_result{
+
+}
