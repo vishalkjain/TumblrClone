@@ -276,6 +276,7 @@ header > ul > li {
 
 .tag-name {
   color: white;
+  margin-bottom: 0px;
 }
 
 .edit-options{
@@ -317,6 +318,8 @@ header > ul > li {
   padding: 10px 0;
   border-radius: 5px;
   margin: 10px 10px 10px 0;
+  min-height: 200px;
+  padding-left: 20px;
 }
 
 .search-result {
@@ -418,7 +421,8 @@ body.has-active-modal:before {
   float:right;
 }*/
 #new-post {
-  padding-bottom: 15px;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 
 #new-post h4 {
@@ -462,7 +466,7 @@ body.has-active-modal:before {
 */  background-color: #fff;
   border-radius: 5px;
   padding: 10px;
-/*  Edit the padding bottom here to fix bottom bar overlap
+/*  Edit the padding bottom here to fix grey bar overlap
 */  padding-bottom: 60px;
   position: relative;
   float:right;
@@ -665,5 +669,12 @@ body.has-active-modal:before {
 }
 
 .user_search_result{
+  padding: 10px 500px 10px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: #000;
+}
 
+.user_search_result:hover{
+  color: grey;
 }

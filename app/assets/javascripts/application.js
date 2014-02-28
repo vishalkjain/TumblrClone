@@ -22,7 +22,7 @@ $(document).ready(function(){
     $("body").addClass("has-active-modal");
     $("#new-post").addClass("hidden");
     $("#new-post").removeClass("display-inline-block")
-    $("#slide-down").slideDown(800, function(){
+    $("#slide-down").slideDown(700, function(){
       $("#slide-down").addClass("display-inline-block")
       $("#post-form").removeClass("hidden");
     });
@@ -32,7 +32,7 @@ $(document).ready(function(){
   $(".post-buttons").click(function(){
     $("#hidden-post-area").val(postarea.innerHTML);
     $("#post-form").addClass("hidden");
-    $("#slide-down").slideUp(1000, function(){
+    $("#slide-down").slideUp(700, function(){
       $("#new-post").removeClass("hidden");
       $("body").removeClass("has-active-modal");
     });
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     $greybar.prev().addClass("hidden");
 
-    $greybar.next().slideDown(1000, function(){
+    $greybar.next().slideDown(700, function(){
       console.log($(".hidden-post-edit-area").val());
       editpostarea.html($greybar.next().find(".hidden-post-edit-area").val());
       console.log($greybar.next().find(".hidden-post-edit-area").val());
@@ -74,7 +74,7 @@ $(document).ready(function(){
      $target = $(event.currentTarget);
      $target.siblings(".hidden-post-edit-area").val(editpostarea.html());
      console.log(editpostarea.html());
-     $target.parents(".edit-post-form-container").slideUp(1000, function(){
+     $target.parents(".edit-post-form-container").slideUp(700, function(){
 
        $target.parents(".edit-post-form-container").prev().prev().removeClass("hidden");
        $("body").removeClass("has-active-modal");
