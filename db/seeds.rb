@@ -15,7 +15,7 @@ end
 
 User.all.each do |user|
   user.posts.create(
-    title: Faker::Address.street_address,
+    title: Faker::Lorem.word,
     body: Faker::Lorem.paragraph(sentence_count = 10) )
 end
 

@@ -214,7 +214,7 @@ header > ul > li {
 .sidebar-link1 {
   border-bottom: 1px solid;
 
-  padding:10px 137px 10px 10px;
+  padding:10px 130px 10px 30px;
   /*margin: 50px 0;*/
 }
 
@@ -223,14 +223,14 @@ header > ul > li {
 .sidebar-link2 {
   border-bottom: 1px solid;
 
-  padding:10px 107px 10px 10px;
+  padding:10px 100px 10px 30px;
   /*margin: 50px 0;*/
 }
 
 .sidebar-link3 {
   border-bottom: 1px solid;
 
-  padding:10px 69px 10px 10px;
+  padding:10px 62px 10px 29px;
   /*margin: 50px 0;*/
 }
 
@@ -724,4 +724,8 @@ body.has-active-modal:before {
 .post-photo {
   margin: 0 100px;
 
+}
+
+.sidebar ul li img {
+  position: absolute;
 }
