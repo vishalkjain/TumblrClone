@@ -20,10 +20,10 @@ User.all.each do |user|
 end
 
 
-u = User.create(email: "demo1@tumblr.com", password: "password", username: "DemoUser1")
-u2 = User.create(email: "demo2@tumblr.com", password: "password", username: "DemoUser2")
-u3 = User.create(email: "demo3@tumblr.com", password: "password", username: "DemoUser3")
-u4 = User.create(email: "demo4@tumblr.com", password: "password", username: "DemoUser4")
+u = User.create(email: "demo1@example.com", password: "password", username: "DemoUser1")
+u2 = User.create(email: "demo2@example.com", password: "password", username: "DemoUser2")
+u3 = User.create(email: "demo3@example.com", password: "password", username: "DemoUser3")
+u4 = User.create(email: "demo4@example.com", password: "password", username: "DemoUser4")
 
 u.posts.create(title: "My first post", body: "I am DemoUser1 and I wrote this. Feels good")
 u.posts.create(title: "My second post", body: "I am DemoUser1 and I wrote this. This is my second post")
