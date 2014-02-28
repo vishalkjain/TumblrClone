@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225141950) do
+ActiveRecord::Schema.define(:version => 20140228150843) do
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
@@ -37,8 +37,12 @@ ActiveRecord::Schema.define(:version => 20140225141950) do
     t.string   "photo_url"
     t.string   "link_url"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "post_photo_file_name"
+    t.string   "post_photo_content_type"
+    t.integer  "post_photo_file_size"
+    t.datetime "post_photo_updated_at"
   end
 
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"

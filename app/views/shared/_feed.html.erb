@@ -14,7 +14,7 @@
 
 
       <div id="slide-down" class="post-content post-form hidden">
-        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true" >
+        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true" enctype="multipart/form-data">
           <input type="hidden"
                    name="authenticity_token"
                    value="<%= form_authenticity_token %>">
@@ -42,7 +42,7 @@
           <br>
 
           <input name="post[body]" id="hidden-post-area" style="display:none;">
-
+          <div class="field">Photo<input type="file" name="post[post_photo]"></div>
           <label>
             <input type="text" name="tag[tag_name]" class="tag-input-bar" placeholder="Tags">
           </label>

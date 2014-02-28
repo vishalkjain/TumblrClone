@@ -10,10 +10,11 @@ class Post < ActiveRecord::Base
    has_many :tags, through: :taggings, source: :tag
 
    multisearchable :against => [:title]
-   # has_attached_file :post_photo, :styles => {
-#            :big => "600x600>",
-#            :small => "50x50#"
-#          }
+   has_attached_file :post_photo, :styles => {
+           :big => "300x300>",
+           :small => "50x50#"
+         }
+   validates_attachment_content_type :post_photo, :content_type => /\Aimage\/.*\Z/
 
    def must_have_one_post_type
      if body.blank? && photo_url.blank? && link_url.blank?

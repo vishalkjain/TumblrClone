@@ -6,13 +6,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-
+    if params[:post][:post_photo]
+      @post.photo_url = true
+    end
     if params[:tag][:tag_name].length > 0
       params[:tag][:tag_name].split(" ").each do |tagname|
         @post.tags << Tag.find_or_create_by_tag_name(tagname)
       end
     end
-
     if !@post.save
       render :json => @post.errors.full_messages
     else
