@@ -12,7 +12,7 @@
     <li><%= link_to post.title, post_url(post), class: "post-title" %></li>
     <li><p><%= post.body.html_safe if post.body %></p></li>
     <% if post.photo_url %>
-    <%= image_tag post.post_photo.url(:big) %>
+      <%= image_tag post.post_photo.url(:big), class: "post-photo" %>
     <%end%>
   <%#= post.photo_url  if post.photo_url %>
   <%#= post.link_url if post.link_url %>

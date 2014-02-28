@@ -1,6 +1,7 @@
   <ul class="posts clearfix">
 
   <% if request.fullpath() == "/dashboard"%>
+
     <li class="post">
       <%= image_tag current_user.avatar.url(:small), :class => "avatar" %>
       <!-- triangle -->

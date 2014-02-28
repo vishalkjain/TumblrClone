@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   include ActiveRecord::SpawnMethods
+  before_filter :require_signed_in!
   def show
     @myposts = current_user.posts.order(&:created_at).reverse_order
     @otherPosts = current_user.followed_posts.order(&:created_at).reverse_order

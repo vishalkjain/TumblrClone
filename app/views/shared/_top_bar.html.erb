@@ -8,4 +8,7 @@
 
     <li><form action="<%=searches_url%>" method:"GET"><input type="text" name="search" placeholder="Search" class="search-bar"> </form></li>
   </ul>
+  <% if request.fullpath() == "/dashboard"%>
+  <div class="tri-top"></div>
+  <%end%>
 </header>
