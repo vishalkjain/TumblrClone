@@ -19,11 +19,12 @@ User.all.each do |user|
     body: Faker::Lorem.paragraph(sentence_count = 10) )
 end
 
-
+u0 = User.create(email: "demo@example.com", password: "password", username: "DemoUser")
 u = User.create(email: "demo1@example.com", password: "password", username: "DemoUser1")
 u2 = User.create(email: "demo2@example.com", password: "password", username: "DemoUser2")
 u3 = User.create(email: "demo3@example.com", password: "password", username: "DemoUser3")
 u4 = User.create(email: "demo4@example.com", password: "password", username: "DemoUser4")
+u5 = User.create(email: "demo5@example.com", password: "password", username: "DemoUser5")
 
 u.posts.create(title: "My first post", body: "I am DemoUser1 and I wrote this. Feels good")
 u.posts.create(title: "My second post", body: "I am DemoUser1 and I wrote this. This is my second post")
@@ -31,12 +32,30 @@ u.posts.create(title: "My third post", body: "I am DemoUser1 and I wrote this. T
 u2.posts.create(title: "My first post", body: "I am DemoUser2 and I wrote this. Feels even better")
 u3.posts.create(title: "My first post", body: "I am DemoUser3 and I wrote this. Trying out this whole tumblr thing")
 u3.posts.create(title: "My second post", body: "I am DemoUser3 and I wrote this. This is my second post")
-u4.posts.create(title: "My first post", body: "I am DemoUser4 and I wrote this. Thanks for following me")
+u4.posts.create(title: "Repeat", body: "I am DemoUser4 and I wrote this. Thanks for following me")
+u4.posts.create(title: "Repeat", body: "I am DemoUser4 and I wrote this. Thanks for following me")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
+u5.posts.create(title: "Repeat", body: "I am DemoUser5 and I wrote this.")
 
-
-Follow.create(user_id: u.id, follow_id: u2.id)
-Follow.create(user_id: u.id, follow_id: u3.id)
-Follow.create(user_id: u2.id, follow_id: u.id)
+Follow.create(user_id: u0.id, follow_id: u.id)
+Follow.create(user_id: u0.id, follow_id: u2.id)
+Follow.create(user_id: u0.id, follow_id: u3.id)
+Follow.create(user_id: u2.id, follow_id: u0.id)
 
 
 # i = User.first.id
