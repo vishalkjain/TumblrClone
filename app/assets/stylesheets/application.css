@@ -266,6 +266,10 @@ header > ul > li {
   display: none;
 }
 
+.unhide {
+  display: block;
+}
+
 .blogname {
   color: #fff;
   margin-bottom: 0px;

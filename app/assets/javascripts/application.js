@@ -88,6 +88,7 @@ $(document).ready(function(){
      this.reset();
    });
 
+
 });
 
 
@@ -115,4 +116,5 @@ function edit(command, value) {
   document.execCommand(command, false, value);
   editpostarea.focus();
 }
+
 

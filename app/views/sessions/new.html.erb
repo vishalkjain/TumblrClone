@@ -10,6 +10,14 @@
 
   </form>
   <a href="/auth/facebook" class><img src="/assets/logos/active_600.png"></a>
+    <!-- Guest account info -->
+  <form action="<%= session_url %>" method="POST">
+      <input type="text" name="user[email]" value="demo@example.com" class="sign-input hidden">
+      <br>
+      <input type="password" name="user[password]" value="password" class="sign-input hidden">
+      <br>
+      <input type="submit" class="sign-btn" value="Guest Account">
+  </form>
 </div>
 <footer>
    <%= link_to "Sign Up", new_user_url, class: "other-btn" %>
