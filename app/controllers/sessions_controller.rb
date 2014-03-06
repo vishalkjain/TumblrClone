@@ -16,6 +16,9 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by_credentials(params[:user][:email],
         params[:user][:password])
+        if @user.email == "demo@example.com"
+          resetDemoAccount(@user)
+        end
     end
 
     if @user
@@ -30,4 +33,14 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to new_session_url
   end
+
+  def resetDemoAccount(user)
+    user.posts.destroy_all
+    user.follows.destroy_all
+    user.followers.destroy_all
+    user.username = "DemoUser"
+    Post.create!(user_id: 6, title: "Edit Me!", body: "<div>Use the Rich Text Editor to format the words below</div>Bold Italics Strike Underline<div><br></div><div>Left</div><div>Center</div><div>Right</div>")
+
+  end
+
 end
