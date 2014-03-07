@@ -26,7 +26,6 @@ class SessionsController < ApplicationController
     else
       flash[:errors] = ["Invalid email/password combination"]
       render action: "new"
-      #render :json => "Credentials were wrong"
     end
   end
 

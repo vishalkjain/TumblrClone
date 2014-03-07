@@ -38,7 +38,7 @@ $(document).ready(function(){
     });
   });
 
-  //gear button stuff
+  //gear button
   $(".posts").on("click", ".edit-post-toggle-btn", function(event){
     $settingsButton = $(event.currentTarget)
     $settingsButton.next().show();

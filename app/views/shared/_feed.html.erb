@@ -9,8 +9,6 @@
       <div id="new-post" class="post-content display-inline-block">
         <img src="/assets/logos/iconmonstr-font-size-icon-64.png">
         <h4>Create new post </h4>
-        <!-- <li class="new-photo-post"><h4>New Photo </h4></li> -->
-
       </div>
 
 
@@ -24,18 +22,9 @@
             <input type="text" name="post[title]" placeholder="Title" style="width:475px; padding-top: 3px; padding-bottom: 3px; margin-bottom:2px; font-size: 16px;">
           </label>
           <br>
-          <div class="format-options">
-            <img class="format-option" onclick="add('bold');" src="/assets/editor/iconmonstr-bold-icon-16.png" />
-            <img class="format-option" onclick="add('italic');" src="/assets/editor/iconmonstr-italic-icon-16.png" />
-            <img class="format-option" onclick="add('strikeThrough');" src="/assets/editor/iconmonstr-strikethrough-icon-16.png" />
-            <img class="format-option" onclick="add('justifyLeft');" src="/assets/editor/iconmonstr-align-left-icon-16.png" />
-            <img class="format-option" onclick="add('justifyCenter');" src="/assets/editor/iconmonstr-align-justify-icon-16.png" />
-            <img class="format-option" onclick="add('justifyRight');" src="/assets/editor/iconmonstr-align-right-icon-16.png" />
-            <img class="format-option" onclick="add('insertOrderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
-            <img class="format-option" onclick="add('insertUnorderedList');" src="/assets/editor/iconmonstr-numbered-list-icon-16.png" />
-            <img class="format-option" onclick="add('underline');" src="/assets/editor/iconmonstr-underline-icon-16.png" />
-
-          </div>
+          <!-- Rich text editor controls -->
+          <%= render "shared/editor" %>
+          <!-- /Rich text editor controls -->
           <label>
           <div id="postarea" name="post[body]" contenteditable="true" style="width:475px; height:100px; border: 1px solid black; overflow:hidden"></div>
           <!-- <textarea name="post[body]" id="postarea" ></textarea> -->
@@ -53,30 +42,6 @@
         </form>
       </div>
 
-      <!-- <div id="slide-down" class="post-content post-form hidden">
-        <form action="<%= posts_url %>" method="POST" id="post-form" class="hidden" data-remote="true">
-          <input type="hidden"
-                   name="authenticity_token"
-                   value="<%= form_authenticity_token %>">
-
-           <label>Title
-             <input type="text" name="post[title]">
-           </label>
-           <br>
-
-           <label>Photo URL
-           <input type="text" name="post[photo_url]">
-           </label>
-           <br>
-           <label>Tag
-             <input type="text" name="tag[tag_name]">
-           </label>
-           <br>
-          <input class="post-buttons" type="submit" value="Create Photo Post">
-          <button type="button" class="post-buttons">Cancel</button>
-        </form>
-      </div> -->
-
     </li>
   <% end %>
 
@@ -84,8 +49,6 @@
 
  <!-- List of posts -->
  <%= render partial: "posts/post", collection: @posts %>
-  <%# @posts.each do |post|%>
 
-  <%# end %>
 
 </ul>
