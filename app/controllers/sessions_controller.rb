@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by_credentials(params[:user][:email],
         params[:user][:password])
-        if @user.email == "demo@example.com"
+        if @user && @user.email == "demo@example.com"
           resetDemoAccount(@user)
         end
     end
@@ -24,7 +24,9 @@ class SessionsController < ApplicationController
       sign_in(@user)
       redirect_to dashboard_url
     else
-      render :json => "Credentials were wrong"
+      flash[:errors] = ["Invalid email/password combination"]
+      render action: "new"
+      #render :json => "Credentials were wrong"
     end
   end
 

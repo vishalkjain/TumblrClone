@@ -8,7 +8,7 @@ describe Post do
   end
 
   context "without post attributes" do
-    let(:bad_post){ user = User.new}
+    let(:bad_post){ post = Post.new}
 
     it "validates presence of title" do
       expect(:bad_post).to have_at_least(1).error_on(:title)

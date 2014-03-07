@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   before_filter :require_signed_in!, :only => [:show]
   before_filter :require_signed_out!, :only => [:create, :new]
   layout "sessions", :only => [:new]
+
   def new
-    @user = User.new
+    #@user = User.new
   end
 
   def create
@@ -15,7 +16,8 @@ class UsersController < ApplicationController
       sign_in(@user)
       redirect_to dashboard_url
     else
-      render :json => @user.errors.full_messages
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_url
     end
   end
 
@@ -26,11 +28,6 @@ class UsersController < ApplicationController
       @potential_follow = @user
     end
     @posts = @user.posts
-    # if params.include?(:id)
-#       @user = User.find(params[:id])
-#     else
-#       redirect_to user_url(current_user)
-#     end
   end
 
   def edit
@@ -38,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    #@user = current_user
     if current_user.update_attributes(params[:user])
       redirect_to dashboard_url
     else

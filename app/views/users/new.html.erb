@@ -18,6 +18,8 @@
 
   <a href="/auth/facebook"><img src="/assets/logos/active_600.png"></a>
 
+  <%= render :partial => "layouts/errors" %>
+
   <!-- Guest account info -->
   <form action="<%= session_url %>" method="POST" >
       <input type="text" name="user[email]" value="demo@example.com" class="sign-input hidden">
