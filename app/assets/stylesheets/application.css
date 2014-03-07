@@ -39,8 +39,13 @@ html, body {
 }
 
 .sign {
-/*  background-color: #3E5873;
-*/  background-image: url("/assets/tumblrbg.jpg");
+  background-image: url("/assets/tumblrbg.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 /*.sign-in-form {
