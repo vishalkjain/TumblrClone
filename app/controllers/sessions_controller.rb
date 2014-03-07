@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     if request.env['omniauth.auth']
       fb_data = request.env['omniauth.auth']
       @user = User.find_by_uid(fb_data[:uid])

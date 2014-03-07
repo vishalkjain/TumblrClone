@@ -1,22 +1,30 @@
-
 <div class="sign-in-form">
   <h1>A tumblr Clone</h1>
+
   <form action="<%= session_url %>" method="POST">
     <input class="sign-input" type="text" name="user[email]" placeholder="Email">
+
     <br>
+
     <input class="sign-input" type="password" name="user[password]" placeholder="Password">
+
     <br>
     <input class="sign-btn" type="submit" value="Sign In">
-
   </form>
+
   <a href="/auth/facebook" class><img src="/assets/logos/active_600.png"></a>
-    <!-- Guest account info -->
-  <form action="<%= session_url %>" method="POST">
+
+  <!-- Guest account info -->
+  <form action="<%= session_url %>" method="POST" >
       <input type="text" name="user[email]" value="demo@example.com" class="sign-input hidden">
+
       <br>
+
       <input type="password" name="user[password]" value="password" class="sign-input hidden">
+
       <br>
-      <input type="submit" class="sign-btn" value="Guest Account">
+
+      <input type="submit" class="sign-btn" value="Guest Account" style="top:100px;">
   </form>
 </div>
 <footer>
