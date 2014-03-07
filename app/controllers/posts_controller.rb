@@ -25,13 +25,6 @@ class PostsController < ApplicationController
 
     end
 
-    # if request.xhr?
- #      render partial: "post/post", locals: {post: @post}
- #    if @post.save
- #      redirect_to dashboard_url
- #    else
- #      render :json => @post.errors.full_messages
- #    end
   end
 
   def show
@@ -48,6 +41,7 @@ class PostsController < ApplicationController
   end
 
   def update
+
     @post = Post.find(params[:id])
     if(params[:tag][:tag_name] != "")
       params[:tag][:tag_name].split(" ").each do |tagname|

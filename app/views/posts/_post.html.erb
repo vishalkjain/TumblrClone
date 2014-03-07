@@ -71,7 +71,7 @@
       <ul class="edit-tags">
         <% post.tags.each do |tag|%>
 
-         <li> <%= button_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete, class: "delete-tag" %>
+         <li> <%= link_to "#" + tag.tag_name, tagging_url(tag.taggings.find_by_post_id(post.id)), method: :delete, class: "delete-tag" %>
          </li>
 
         <% end %>
