@@ -33,6 +33,7 @@ $(document).ready(function(){
     $("#hidden-post-area").val(postarea.innerHTML);
     $("#post-form").addClass("hidden");
     $("#slide-down").slideUp(700, function(){
+      postarea.innerHTML = "";
       $("#new-post").removeClass("hidden");
       $("body").removeClass("has-active-modal");
     });
