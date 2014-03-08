@@ -55,16 +55,13 @@ $(document).ready(function(){
     $target= $(event.currentTarget);
     $greybar = $target.parents(".grey-bar");
     getEditorDiv2($greybar.next().find(".edit-post-area"));
-    console.log("should be div");
-    console.log($greybar.next().find(".edit-post-area"));
     $("body").addClass("has-active-modal");
 
     $greybar.prev().addClass("hidden");
-
+    $greybar.hide();
     $greybar.next().slideDown(700, function(){
-      console.log($(".hidden-post-edit-area").val());
       editpostarea.html($greybar.next().find(".hidden-post-edit-area").val());
-      console.log($greybar.next().find(".hidden-post-edit-area").val());
+
     });
   })
 
@@ -76,7 +73,7 @@ $(document).ready(function(){
      $target.siblings(".hidden-post-edit-area").val(editpostarea.html());
      console.log(editpostarea.html());
      $target.parents(".edit-post-form-container").slideUp(700, function(){
-
+       $(".grey-bar").show();
        $target.parents(".edit-post-form-container").prev().prev().removeClass("hidden");
        $("body").removeClass("has-active-modal");
      });

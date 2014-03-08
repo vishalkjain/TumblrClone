@@ -1,6 +1,10 @@
 <!-- Top bar/header -->
 <header class="clearfix">
-  <h1 class="logo">tumblr</h1>
+
+  <a href="<%=dashboard_url%>" class="logo">
+    <h1>tumblr</h1>
+  </a>
+
   <ul>
     <li><a href="<%=dashboard_url%>"><img src="https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/home_icon.png"></a></li>
     <li><a href="<%= edit_user_url(current_user.id) %>"><img src="https://s3.amazonaws.com/vishal-tumblr-clone-dev/icons/settings_icon.png"></a></li>

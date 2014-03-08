@@ -43,6 +43,7 @@ class SessionsController < ApplicationController
     u2 = User.find_by_email("demo2@example.com")
     u3 = User.find_by_email("demo3@example.com")
     Post.create!(user_id: 6, title: "Edit Me!", body: "<div>Use the Rich Text Editor to format the words below</div>Bold Italics Strike Underline<div><br></div><div>Left</div><div>Center</div><div>Right</div>")
+    Post.create!(user_id: 6, title: "Welcome", body: "Enjoy my site and please let me know what you think!")
     Follow.create(user_id: user.id, follow_id: u.id)
     Follow.create(user_id: user.id, follow_id: u2.id)
     Follow.create(user_id: user.id, follow_id: u3.id)

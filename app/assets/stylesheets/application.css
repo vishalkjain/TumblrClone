@@ -11,6 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+/*Reset*/
 html, body, div, ul, li, span, strong, header, a{
   padding: 0;
   margin: 0;
@@ -20,6 +22,7 @@ html, body, div, ul, li, span, strong, header, a{
   list-style: none;
 
 }
+
 
 body {
   font-family: sans-serif;
@@ -32,12 +35,29 @@ html, body {
 
 .website{
   background-color: #3E5873;
-  background: -webkit-linear-gradient(#3E5873, #2c4762)  no-repeat; /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#3E5873, #2c4762) no-repeat; /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#3E5873, #2c4762) no-repeat; /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#3E5873, #2c4762) no-repeat; /* Standard syntax */
+  background: -webkit-linear-gradient(#3E5873, #2c4762)  no-repeat;
+  background: -o-linear-gradient(#3E5873, #2c4762) no-repeat;
+  background: -moz-linear-gradient(#3E5873, #2c4762) no-repeat;
+  background: linear-gradient(#3E5873, #2c4762) no-repeat;
 }
 
+/*Clearfix*/
+.clearfix:after {
+  content:"";
+  clear:both;
+  display:block;
+}
+
+/*Hiding elements*/
+.hidden {
+  display: none;
+}
+
+.unhide {
+  display: block;
+}
+
+/*Sign In/New Account pages*/
 .sign {
   background-image: url("/assets/tumblrbg.jpg");
   background-repeat: no-repeat;
@@ -45,19 +65,7 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
-
-/*.sign-in-form {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}*/
 
 .sign-in-form {
   margin: 200px auto;
@@ -71,12 +79,9 @@ html, body {
   text-shadow: 2px 2px #000;
   font-size: 40px;
   margin-bottom: 10px;
-
-
 }
 
 .sign-input {
-
   border:solid 1px #BFBDBD;
   color: black;
   height: 20px;
@@ -116,8 +121,6 @@ html, body {
   opacity: 0.7;
 }
 
-
-
 footer {
   position: absolute;
   bottom: 0px;
@@ -125,12 +128,13 @@ footer {
   padding-left: 15px;
 }
 
+/*Top bar Navigation*/
 header {
   width: 850px;
   margin: 0 auto;
 }
 
-header > h1 {
+header h1 {
   float:left;
   color: white;
   font-size: 50px;
@@ -148,39 +152,11 @@ header > ul > li {
   padding: 0 15px;
 }
 
-/*header:after {
-  content: "";
-  clear: both;
-  display: block;
-}*/
-
-.main {
-  min-height: 300px;
-  background-color: #2c4762;
-  width: 850px;
-/*  max-width: 900px;*/
-  margin: 0 auto;
-  padding: 10px;
-  display: block;
-  clear: both;
-  /*border: 1px solid black;*/
-  border-radius: 20px;
-
+.logo{
+  text-decoration: none;
+  color:white;
 }
-
-.posts {
-  width: 640px;
-  float:left;
-  display: inline-block;
-  padding-top: 10px;
-}
-/*.posts:after {
-  content:"";
-  clear:both;
-  display:block;
-}*/
-
-
+/*Sidebar*/
 .sidebar {
   display:inline-block;
   padding-top: 10px;
@@ -190,7 +166,6 @@ header > ul > li {
 .sidebar li {
   margin-top: 1px;
   padding: 10px 0px;
-
   border-color: #D4D4D4;
   color: #d4d4d4;
   font-weight: 600;
@@ -200,43 +175,31 @@ header > ul > li {
 .sidebar li:first-child{
   border-bottom: 1px solid;
   padding: 10px 90px 10px 10px;
-
 }
 
 .sidebar a {
   color: #D4D4D4;
   text-decoration: none;
-/*  padding: 10px 40px 10px 10px;
-*/
 }
 
 .sidebar a:hover{
   color: #B0B0B0;
   background-color:#34516E;
-  /*background-color:#2c4762;*/
 }
 
 .sidebar-link1 {
   border-bottom: 1px solid;
-
   padding:10px 130px 10px 30px;
-  /*margin: 50px 0;*/
 }
-
-
 
 .sidebar-link2 {
   border-bottom: 1px solid;
-
   padding:10px 100px 10px 30px;
-  /*margin: 50px 0;*/
 }
 
 .sidebar-link3 {
   border-bottom: 1px solid;
-
   padding:10px 62px 10px 29px;
-  /*margin: 50px 0;*/
 }
 
 #follow-text {
@@ -248,12 +211,24 @@ header > ul > li {
   margin-left: 10px;
 }
 
-.clearfix:after {
-  content:"";
-  clear:both;
-  display:block;
+.main {
+  min-height: 300px;
+  background-color: #2c4762;
+  width: 850px;
+  margin: 0 auto;
+  padding: 10px;
+  display: block;
+  clear: both;
+  border-radius: 20px;
 }
 
+/*Dashboard*/
+.posts {
+  width: 640px;
+  float:left;
+  display: inline-block;
+  padding-top: 10px;
+}
 
 
 .follow {
@@ -267,21 +242,12 @@ header > ul > li {
   padding-left: 15px;
 }
 
-.hidden {
-  display: none;
-}
 
-.unhide {
-  display: block;
-}
 
 .blogname {
   color: #fff;
   margin-bottom: 0px;
 }
-
-
-
 
 .tag-name {
   color: white;
@@ -376,8 +342,6 @@ header > ul > li {
 
 .modal {
   display: none;
-
-
 }
 
 body:before {
@@ -391,6 +355,7 @@ body:before {
   background: rgba(0,0,0,0.5);
   z-index: 5;
 }
+
 body.has-active-modal:before {
   display: block;
 }
@@ -404,19 +369,11 @@ body.has-active-modal:before {
   background-color: #D9D9D9;
   height: 45px;
   width: 520px;
-  /*margin: auto;*/
   position: absolute;
   left: 70px;
   bottom: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-
-  /*min-height: 40px;
-  width: 500px;
-  display: inline-block;
-  border-radius: 15px;
-  padding: 10px;
-  background-color:white;*/
 }
 /*
 .edit-post-content-after {
