@@ -5,7 +5,7 @@ Final project for App Academy
 
 A Ruby on Rails clone of tumblr.com that replicates ability to CRUD (create, read, update and delete) posts, followers and tags.
 Uses a custom rich text editor which can successfully bold, italicize, justify, underline and strike-through.
-It uses Unobtrusive Javascript to speed up actions client-side nad PostgreSQL to store data. 
+It uses Unobtrusive Javascript to speed up actions client-side and PostgreSQL to store data. 
 
 URL: www.tumblrclone.com
 Site is hosted on Heroku
